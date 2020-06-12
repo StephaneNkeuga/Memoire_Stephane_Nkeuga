@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.6.2)  11 JUN 2020 16:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7140 64-bit) (preloaded format=pdflatex 2020.6.2)  12 JUN 2020 18:17
 entering extended mode
 **./Memoire_Stephane_Nkeuga.tex
 (Memoire_Stephane_Nkeuga.tex
@@ -2293,20 +2293,20 @@ Package pdftex.def Info: Pictures/fig7.png  used on input line 966.
 <Pictures/fig10.png, id=519, 400.49625pt x 186.6975pt>
 File: Pictures/fig10.png Graphic file (type png)
 <use Pictures/fig10.png>
-Package pdftex.def Info: Pictures/fig10.png  used on input line 1022.
+Package pdftex.def Info: Pictures/fig10.png  used on input line 1020.
 (pdftex.def)             Requested size: 400.49527pt x 186.69704pt.
 <Pictures/fig11.png, id=522, 401.24907pt x 179.92218pt>
 File: Pictures/fig11.png Graphic file (type png)
 <use Pictures/fig11.png>
-Package pdftex.def Info: Pictures/fig11.png  used on input line 1032.
+Package pdftex.def Info: Pictures/fig11.png  used on input line 1030.
 (pdftex.def)             Requested size: 401.24808pt x 179.92174pt.
 <Pictures/fig12.png, id=525, 401.24907pt x 170.88844pt>
 File: Pictures/fig12.png Graphic file (type png)
 <use Pictures/fig12.png>
-Package pdftex.def Info: Pictures/fig12.png  used on input line 1045.
+Package pdftex.def Info: Pictures/fig12.png  used on input line 1043.
 (pdftex.def)             Requested size: 401.24808pt x 170.88802pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1063--1074
+Underfull \hbox (badness 10000) in paragraph at lines 1061--1072
 
  []
 
@@ -2314,15 +2314,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1063--1074
 <Pictures/adaboost.jpg, id=539, 720.44156pt x 410.2828pt>
 File: Pictures/adaboost.jpg Graphic file (type jpg)
 <use Pictures/adaboost.jpg>
-Package pdftex.def Info: Pictures/adaboost.jpg  used on input line 1078.
+Package pdftex.def Info: Pictures/adaboost.jpg  used on input line 1076.
 (pdftex.def)             Requested size: 360.2199pt x 205.1409pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1081--1094
+Underfull \hbox (badness 10000) in paragraph at lines 1079--1092
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1096--1129
+Underfull \hbox (badness 10000) in paragraph at lines 1094--1127
 
  []
 
@@ -2330,15 +2330,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 1096--1129
 <Pictures/randomforest.jpg, id=544, 880.79062pt x 593.21625pt>
 File: Pictures/randomforest.jpg Graphic file (type jpg)
 <use Pictures/randomforest.jpg>
-Package pdftex.def Info: Pictures/randomforest.jpg  used on input line 1148.
+Package pdftex.def Info: Pictures/randomforest.jpg  used on input line 1146.
 (pdftex.def)             Requested size: 440.39423pt x 296.60739pt.
  [38] [39 <./Pictures/randomforest.jpg>]
 
 LaTeX Warning: Citation `khoshgoftaar1996early;khoshgoftaar1999assessing' on pa
-ge 40 undefined on input line 1208.
+ge 40 undefined on input line 1206.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1193--1234
+Underfull \hbox (badness 10000) in paragraph at lines 1191--1232
 
  []
 
@@ -2349,12 +2349,12 @@ We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 [40]
-Underfull \hbox (badness 10000) in paragraph at lines 1244--1282
+Underfull \hbox (badness 10000) in paragraph at lines 1242--1280
 
  []
 
 [41] [42]
-Overfull \hbox (2.23688pt too wide) in paragraph at lines 1314--1314
+Overfull \hbox (2.23688pt too wide) in paragraph at lines 1312--1312
 |[]\T1/bch/b/n/14.4 PRéVISION DE LA QUA-LITé DES LO-GI-CIELS BA-SéE SUR L'AP-PR
 EN-
  []
@@ -2901,7 +2901,7 @@ es/MiKTeX 2.9/fonts/type1/public/mathpazo/fplmr.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/mathpazo/fplmri.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
 e1/public/fpl/fplrc8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino
 /uplr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on Memoire_Stephane_Nkeuga.pdf (76 pages, 2921801 bytes).
+Output written on Memoire_Stephane_Nkeuga.pdf (76 pages, 2921797 bytes).
 PDF statistics:
  938 PDF objects out of 1000 (max. 8388607)
  210 named destinations out of 1000 (max. 500000)
