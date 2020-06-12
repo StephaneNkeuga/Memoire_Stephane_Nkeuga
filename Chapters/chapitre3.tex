@@ -1,0 +1,148 @@
+\chapter{Implémentation:Présentation des différents outils Et interprétation des résultats} \label{chap:3}
+\minitoc
+
+\section{Introduction}
+\section{Présentation du modèle de qualité }
+Dans ce travail nous souhaitons évaluer la qualité du produit logiciel , pour cela nous nous servons des
+métriques issues du code source.
+Notre modèle de qualité est calquer sur le modèle ISO 9126 qui se concentre sur la qualité du produit,
+la norme ISO 9126 ne repose pas uniquement sur les métriques et de nombreuses mesures doivent être manuelles.\\
+La norme lie les qualités internes et externes d'un logiciel, indique un lien de causalité entre ces
+deux types de caractéristiques mais ne donne aucune indication quant aux bonnes ou mauvaises
+valeurs.\\
+Cette norme semble être une bonne approche pour déterminer la qualité d'un logiciel dans son
+ensemble et fournir une vue globale satisfaisante. Cependant, la norme ne précise pas de manière
+explicite comment mesurer les caractéristiques qualité définies et comment les relier aux métriques
+de bas niveau.\\
+
+Ainsi dans ce mémoire nous nous servons de la norme ISO 9126 comme socle pour l'évaluation de la qualité, c'est à partir de ce modèle que nous identifions les attributs de qualite de haut niveau.En suite notre modèle est inspiré de celui de Dromey qui représente essentiellement une
+configuration à trois niveaux avec des attributs de qualité, des propriétés de conception et des
+composants(classes , méthodes,paquetage). Son point de vue est axé sur la conception, et l'approche consistant à utiliser des mesures de produits est basée sur l'hypothèse que la mesure et le contrôle des propriétés internes des produits (indicateurs de qualité internes) se traduiront par un meilleur
+comportement externe des produits (absence de défaillances, simplicité de changement, qualité d'utilisation) % referernce ici da_jetter[KP]\\
+Enfin Bansiya dans ses travaux associe les métriques de qualité et les attributs de haut niveau ,son modèle se concentre sur une vue externe de la qualité, notre modèle de qualité est également inspire de ce dernier,
+On peut donc dire que la norme ISO 9126 tente d'unir la vue interne et externe et la qualité telle que l'utilisateur la perçoit. Le modèles de Dromey et Bansiya prennent en compte la vue interne et externe. Cela signifie que seules les informations disponibles par le code source du produit lui-même sont prises en compte pour évaluer la qualité. De cette façon, une évaluation technique du logiciel en tant que produit est possible (syntaxe) mais ignorer le point de vue de l'utilisateur rend impossible l'évaluation de la qualité sémantique du produit. Avec cette réduction, l'utilisation de mesures du code source
+pour l'évaluation de la qualité devient applicable. Ainsi, l'évaluation de la qualité à l'aide du
+code source ne peut couvrir que la partie architecte/développeur de modèles de qualité
+complets comme la norme ISO 9126. 	
+
+
+Ainsi dans notre modèle de qualité, nous commençons par sélectionner les attributs de qualité que nous souhaitons évaluer tel que la maintenabilité selon la norme ISO 9126, puis nous la raffinons en sous-caractéristiques toujours suivant la norme ISO 9126, 
+en nous inspirant des modèles Dromey et Bansiya nous faisons une association entre les sous-caractéristiques de la qualité et les métriques de code.  Ces métriques constituerons les entrées du système d'apprentissage pour la prédiction de la qualité du logiciel.\\
+Dans notre travail nous évaluons la qualité d'un logiciel en nous servant de son code source, ce qui rend assez large notre champ d'action. Par la suite nous nous concentrons sur les logiciels écrits en langage de programmation orienté objet et plus particulièrement le langage Java. Java est reconnu pour sa portabilité sur toutes les plateformes logiciels(par exemple, Mac, Windows, Android, iOS, etc) mais également sur plusieurs plateformes matériels tel que des centres de données mainframe aux smartphones.
+
+\section{Présentation de l'extracteur des métriques CK(Chidamber-Kemerer metrics)}
+
+Dans cette partie nous utilisons principalement deux outils à savoir:\\
+- L'outil CK(Chidamber-Kemerer metrics) pour l'extraction des métriques de codes \\
+- Weka pour le système l'apprentissage automatique
+\subsection{Fonctionnement CK(Chidamber-Kemerer metrics)}
+Pour extraction des métriques de code source nous nous sommes servir de la version 0.6.2 de l'outil CK(Chidamber-Kemerer metrics).CK est un outil écrit en langage Java par Maurício Aniche Assistant Professor in Software Engineering at TU Delft au Pays Bas. CK calcule des mesures de code au niveau de la classe et au niveau de la métrique dans les projets Java au moyen d'une analyse statique (c'est-à-dire sans avoir besoin de code compilé).
+\subsection{Utilisation de CK(Chidamber-Kemerer metrics)} 
+Son utilisation est assez simple, mais vous devez disposez au moins de la version 8 de java.
+Pour utiliser la dernière version vous devez cloner et générer le point jar avec les commandes suivantes :\\
+\begin{itemize}
+	\item \textbf{git clone https://github.com/mauricioaniche/ck}: permet de cloner l'outil sur son ordinateur comme l'illustre la figure suivante\\
+\end{itemize} 
+\begin{figure}[!hbtp]
+	\centering
+	\includegraphics[scale=1]{ck1.png}
+	\caption{Clonage du l'outil CK}
+\end{figure}
+
+\newpage
+\begin{itemize}
+	\item \textbf{mvn clean compile assembly:single}:  permet de generer le point jar comme l'illustre la figure suivante\\
+\end{itemize} 
+
+\begin{figure}[!hbtp]
+	\centering
+	\includegraphics[scale=1]{ck2.png}
+	\caption{Générer le point jar}
+	\label{pointjar}
+\end{figure}
+\begin{itemize}
+	\item[?]\textbf{java -jar ck-x.x.x-SNAPSHOT-jar-with-dependencies.jar <project dirrectory> <useJars:true|false>}
+\end{itemize}
+Project directory fait référence au répertoire où CK peut trouver tout le code source à analyser. CK recherchera récursivement les fichiers .java. CK peut utiliser les dépendances du projet pour améliorer sa précision. Les paramètres useJars  indiquent à CK de rechercher tous les fichiers .jar dans le répertoire et de les utiliser pour mieux résoudre les types. A la fin l'outil CK générera quatre fichiers csv: un fichier class.csv qui contiendra les métriques au niveau des classes, method.csv qui contiendra les métriques au niveau des méthodes , field.csv qui contiendra les métriques au niveau des champs et variable.csv qui contiendra les métriques au niveau des variables.Dans ce memoire nous atardons sur le fichiers class.csv
+\begin{figure}[!hbtp]
+	\centering
+	\includegraphics[scale=1]{ck3.png}
+	\caption{Calcul des métriques}
+\end{figure}
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=1]{ck4.png}
+	\caption{Aperçu des fichiers }
+\end{figure}
+
+\section{WEKA( Waikato Environment for Knowledge Analysis)}
+Weka (acronyme pour Waikato environment for knowledge analysis, en français : « environnement Waikato pour l'analyse de connaissances ») est une suite de logiciels d'apprentissage automatique écrite en Java et développée à l'université de Waikato en Nouvelle-Zélande. Weka est un logiciel libre disponible sous la Licence publique générale GNU (GPL). %reference wikipzedia ici
+Weka est un logiciel open source fournissant des outils pour le prétraitement des données, Weka met en ?uvre plusieurs algorithmes d'apprentissage automatique et des outils de visualisation permettent de développer des techniques d'apprentissage automatique et les appliquer à des problèmes d'exploration de données du monde réel. Ce que WEKA propose est résumé dans le schéma suivant
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.7]{weka_summarized.jpg}
+	\caption{Structure du logiciel Weka}
+\end{figure}
+
+\subsection{Présentation de WEKA}
+Le logiciel WEKA peut être utilisé sous à travers deux modes principaux. Le premier
+mode est une interface de commande en ligne \textbf{Simple CLI} qui est un interpréteur de ligne
+de commande. Le deuxième mode est une interface graphique \textbf{Explorer}. L'interface graphique
+du logiciel présente six onglets correspondant soit à des étapes du processus d'apprentissage,
+soit des classes d'algorithmes de classification (supervisée ou non):
+\begin{itemize}
+	\item \textbf{Preprocess} : La saisie des données, l'examen et la sélection des attributs, les
+	transformations d'attributs.
+	\item \textbf{Classify} : Les méthodes de classification.
+	\item \textbf{Cluster} : Les méthodes de segmentation (clustering).
+	\item \textbf{Associate} : Les règles d?association.
+	\item \textbf{Select attributes} : L?étude et la recherche de corrélations entre attributs.
+	\item \textbf{Visualize} : représentations graphiques des données.
+\end{itemize}
+Après l'installation de WEKA nous avons l'interface suivante:\\
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.8]{weka2.png}
+	\caption{Interface graphique de WEKA}
+\end{figure}
+
+\subsubsection{Onglet Preprocess}
+Les données sont de plus en plus volumineuses dans l'industrie et le traitement de
+données constitue un véritable défi pour les systèmes informatiques. Le logiciel Weka se
+présente comme une solution efficace pour le traitement de données même celles de grandes
+envergures appelées « Big Data ». Pour être traitées, les données doivent être entrées sous les
+formats ARFF, CSV, Binaire, BDD, SQL et URL. Le format le plus utilisé est le format ARFF.
+Les données sous ces formats sont compatibles si elles sont bien structurées. La structure des
+données se compose de noms des données(@relation) suivis des attributs (@attribut) suivis dela variable de classe à prédiction (@data). Les données peuvent contenir divers types numérique continue, numérique discrète, catégorie, avec ou sans relation d'ordre (par ex. : rouge/vert/bleu), binaire (vrai/faux), les données structurées : arbres, graphes. Les attributs sont des réel (real), des chaînes de caractères (string) et des dates (date). Le principal outil de prétraitement de données est le filtre. Il existe deux types de filtres avec Weka : l'un non-supervisé et l'autre supervisé. Il existe d'autres types de filtre pour les attributs et pour les exemples :\\
+
+\begin{itemize}
+	\item \textbf{Attribute Selection Filter}: sélection d'attributs selon les classes, par exemple, gain en information ;
+	\item \textbf{Discretize Filter}: discrétise un intervalle d'attributs numériques vers des attributs
+	nominaux ;
+	\item \textbf{Nominal To Binary Filter}: Conversion d'attributs nominaux vers binaires ;
+	\item \textbf{Numeric Transformation Filter}: Transformation d'attributs numériques selon une
+	méthode à préciser (Racine carrée, val. Absolue).
+\end{itemize}
+
+\subsubsection{Onglet Classify}
+Les classificateurs sont des modèles qui permettent à partir des modèles entrés de
+prédire les valeurs nominales numériques. Ces outils permettent d'obtenir une valeur chiffrée
+résultante des données et expériences à partir d'algorithme qui selon leur performance
+répondent à des indications précises sur l'attribut étudié.\\
+Ils existent plusieurs algorithmes de classification dans le logiciel Weka. Les listes ne
+sont pas exhaustives pour ne citer que la régression linéaire, la régression logistique , les machines à vecteurs de soutien, les arbres de décision, RandomTree, RandomForest, NaiveBayes, etc
+
+\subsubsection{Onglet Cluster}
+Un algorithme de regroupement permet de trouver des groupes d'instances similaires dans l'ensemble des données. WEKA prend en charge plusieurs algorithmes de regroupement tels que EM, FilteredClusterer, HierarchicalClusterer, SimpleKMeans.
+
+\subsubsection{Onglet Associate}
+Pour montrer le contenu de l'onglet association nous faisons une remarque selon laquelle on a constaté que les gens qui achètent de la bière achètent des couches en même temps. Bien que cela ne semble pas très convaincant, cette règle d'association a été extraite d'énormes bases de données de supermarchés.
+Trouver de telles associations devient vital pour les supermarchés où l'on stocke les couches à côté de celles que les clients peuvent acheter, et où le chiffre d'affaires est en augmentation. Cet onglet contient des schémas pour les règles d'association d'apprentissage, et les apprenants sont choisis et configures selon les attentes voulues.
+
+\subsubsection{Onglet Sélection des attributs}
+Lorsque la base de données contient un grand nombre d'attributs, il y en aura plusieurs qui ne seront pas significatifs pour l'analyse. Ainsi, la suppression des attributs indésirables de l'ensemble de données devient une tâche importante dans l'élaboration d'un bon modèle d'apprentissage automatique. Weka propose d'examiner visuellement les données et décider de leurs attributs pertinents, ce qui pourrait être une tâche énorme pour les bases de données contenant un grand nombre d'attributs,
+Heureusement, WEKA propose plusieurs algorithmes de sélection automatique des caractéristiques tel que ClassifierSubsetEval et PrinicipalComponents. En résumé la sélection des attributs consiste à rechercher toutes les combinaisons possibles d'attributs dans les données pour trouver le sous-ensemble d'attributs qui convient le mieux à la prédiction. 
+
+\subsubsection{Onglet Visualisation}
+L'option Visualiser permet de visualiser les données traitées pour les analyser

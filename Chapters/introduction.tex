@@ -1,0 +1,63 @@
+\chapter{introduction générale}
+\minitoc
+
+\section{Contexte et motivations}
+
+Voici bientôt plus d'un demi-siècle que la vie de l'homme se retrouve bouleverser par les systèmes informatiques et plus particulièrement les logiciels et programmes informatiques, qui sont de plus en plus omniprésent dans nos quotidiens peu importe le secteur d'activité ou l'on se situe finance, éducation, la santé, l'armée pour n'en citer que ceux-la. Cette présence très grandissante a fait passer la notion de qualité du logiciel du stade de besoin de confort vers celui du besoin critique. Avec le temps ces logiciels deviennent plus complexes et universels, mais avant que ces logiciels ne soient mises à la disposition du grand public (utilisateurs finaux) ils se doivent de respecter certains critères de qualité d'un logiciel à savoir la fiabilité, la capacité fonctionnelle ou encore la maintenabilité. L'ISO 9126 définit la qualité logicielle comme étant l'ensemble des traits et caractéristiques d'un produit logiciel portant sur son aptitude à satisfaire des besoins exprimes et implicites (source : norme ISO/IEC 9126 :2001). En effet, toute défaillance d'un système informatique est potentiellement génératrice de désagréments qui peuvent, dans certains cas limites, provoquer de graves atteintes à l'intégrité économique des organisations ou pire à l'intégrité physique des personnes. Pour exemple, à la date du dimanche 10 mars 2019 le crash d'un Boeing 737 Max appartenant la compagnie aérienne Ethiopian Airlines tuant au total 157 personnes.Le crash est causé par un nouveau système logiciel appelé ''Maneuvering Characteristics Augmentation Syste'' (MCAS),que la société Boeing a développé pour résoudre les problèmes de stabilité dans certaines conditions de vol induites par les nouveaux moteurs plus puissants de l'avion.Selon le rapport de la commission des transports et des infrastructures de la Chambre des représentants du parlement américain,la société Boeing savait tout le temps que les pilotes n'avaient que 10 secondes pour identifier le problème et le traiter avant d'être dépassés par les actions malveillantes du MCAS. Et lorsque le MCAS s'est déclenché mortellement, dans le cas de ce crash, il réagissait à de fausses données fournies par un capteur situé sur le nez de l'avion, qui suggéraient que l'avion était en train de décrocher, alors que ce n'était pas le cas. Le crash de la navette Ariane 5 en 1996 qui s'est brisée 40 secondes après le décollage à cause d'un bug informatique dans le système de pilotage automatique. Un bogue qui a provoqué une perte de 370 millions de dollars [Mordal, 2012]. Ou encore le site de vente en ligne ''Ebay'' indisponible pendant 22 heures en 1999, qui entraina une perte pour le groupe estimé entre 3 et 5 millions de dollars [Karine Mordal,2012]. 
+
+\section{Problématique}
+
+Le problème que nous étudions dans ce mémoire est celui qui consiste à une évaluation de la qualité d'un logiciel avec les techniques d'intelligence artificiel. A partir du contexte nous avons formules cette problématique en plusieurs questions qui suscitent un très grand intérêt que ce soit au niveau des entreprises productrices de logiciel ou même des utilisateurs finaux à qui sont destinées ces logiciels comme suit: qu'es ce que la qualité ? qu'es ce que la qualité logicielle ? quelles sont les caractéristiques ou attributs d'un logiciel de qualité ?  comment peut-on évaluer cette qualité logicielle avec l'apprentissage automatique ? Ces différentes questions feront l'objet d'une étude poussé tout au long de ce travail.\\
+
+\section{Objectifs général et spécifiques}
+
+L'objectif général de ce mémoire  est principalement focalisé sur l'évaluation de la qualité du logiciel en tant que produit. Pour pouvoir atteindre cette objectif nous allons utiliser les métriques de code statiques et les techniques d'apprentissage automatique (supervisées et non supervisées).\\
+De ce fait évaluer un logiciel permet à la fois d'obtenir une image précise de la qualité de ce dernier mais peut également fournir une indication quant à son comportement dans le temps : quels sont les risques de bogues, les éventuelles failles sécuritaires, les difficultés de maintenance, les freins à l'évolution, la viabilité à long terme, etc. De plus, évaluer la qualité d'un logiciel peut également servir d'outil pour déterminer si le logiciel correspond aux attentes du client.\\
+Un des objectifs spécifiques de la mesure de la qualité logicielle consiste également à sensibiliser les équipes de développement sur leurs méthodes de programmation. En effet, mesurer la qualité a de surcroît pour objectif de formaliser de bonnes pratiques de travail et des indicateurs permettant d'augmenter la qualité des développements. De même, vouloir mettre en place une mesure de la qualité oblige à formaliser les processus de conception au sein d'une entreprise productrice de logiciel, en commençant par l'expression la plus précise possible des besoins, jusqu'aux processus de tests mis en place pour vérifier l'adéquation entre les fonctionnalités du logiciel et ses objectifs.
+Un autre objectif et pas des moindre est de permettre aux différentes équipes intervenantes dans le processus de conception et d'évolution du logiciel de détecter assez rapidement les Bugs ou défauts des logiciels, de les corriger avant la mise en production du logiciel proprement dit permettant ainsi aux entreprises productrices de logiciels de gagner en terme de coût et surtout en temps. Et enfin évaluer la qualité d'un logiciel toujours avant sa mise en production est un moyen plus ou moins fiable de garantir que le logiciel ne pourra porter atteinte ni l'intégrité financière des organisations ni à celui de personnes utilisant le logiciel.\\
+
+\section{Méthodologie}
+
+Kitchenham cite une liste plus détaillée des aspects de la qualité dans ces [KP]. Cette liste est
+composée par Garvin [Gra84], qui a résumé ces aspects en points de vue. Il a défini le point de vue de l'utilisateur, qui considère la qualité comme étant adaptée à l'objectif de l'utilisateur ; le point de vue du fabricant, qui considère la qualité comme étant conforme aux spécifications ; le point de vue du produit, qui considère la qualité comme étant liée aux caractéristiques inhérentes du produit ; et le point de vue fondé sur la valeur, qui considère la qualité comme dépendant de ce qu'un client est prêt à payer pour l'obtenir. Notre travail porte sur l'évaluation de la qualité des logiciels à l'aide de mesures du code source et a donc une vision de la qualité du produit.
+L'informatique a mis au point plusieurs modèles pour décrire la qualité des produits
+logiciels. L'ISO a essayé de consolider les différentes vues sur la qualité dans un modèle de
+qualité général [iso06]. Des modèles comme la norme ISO donnent une bonne idée de ce que
+signifie la qualité des logiciels dans l'industrie. Malheureusement, ces directives fonctionnent à un niveau d'abstraction élevé et sont difficiles à évaluer pour les différents artefacts logiciels. Un autre problème est l'objectivité de l'estimation de la qualité. Comment peut-on évaluer objectivement un concept de qualité abstrait tel que la maintenabilité ou la fiabilité. Les mesures du code source promettent un moyen objectif et automatisé de recueillir des informations sur le produit logiciel, le plus important du développement de logiciels étant : le code source.\\
+Nous analysons plusieurs modèles de qualité existants afin d'évaluer l'utilité des mesures du
+code source pour exprimer la qualité sur leurs niveaux d'abstraction spécifiques en précisant quelques avantages et inconvénients associés à ces modèles. Nous relions également les métriques du code source aux attributs de qualité de haut niveaux, mais néanmoins dans un contexte de développement spécifique, les métriques de code source peuvent fournir des informations utiles.\\
+
+En outre, nous expliquons comment l'utilisation de mesures du code source peut aider à
+évaluer la qualité des logiciels. Chidamber et Kemerer ont mis au point des mesures de code source pour
+mesurer ce qui se passe dans le code [CK94, BBM96]. Nous évaluons la qualité du code à un
+niveau d'abstraction plus élevé en nous basant sur des combinaisons de mesures du code
+source. Notre outil d'évaluation de la qualité résume les mesures pour exprimer les attributs de
+qualité qui fournissent des informations sur la qualité du code source et donc sur l'état interne
+du produit.Ces mesures serviront d'entrée à notre modèle d'apprentissage automatique\\
+
+
+
+\section{Plan du document}
+
+Ce mémoire comporte 4 chapitres\\
+A l'introduction générale nous décrivons le contexte, les motivations, la problématique, les objectifs généraux et spécifiques et notre contribution.
+Au chapitre 1 nous présentons l'état de l'art en ce qui concerne la qualité du logiciel, son évaluation, en passant par une brève présentation des différentes techniques d'apprentissage automatique, les algorithmes d'apprentissage automatique utilisés dans la prédiction de la qualité logicielle et enfin les travaux connexes ayant déjà traites de ce sujet.\\
+Au chapitre 2 fait état du pré-traitement et la construction du jeu de données, dans ce chapitre nous commençons tout  abord par identifier les différentes caractéristiques de la qualité des sous-caractéristiques et métriques associées à ces dernières , puis faisons le choix des caractéristiques à évaluer suivant le modèle qualité ISO-9126 , puis vient l'étape d'extraction des données du logiciel à évaluer : cette extraction des données ce fait essentiellement à partir des métriques de Chidamber et de Kemerer qui sont des métriques de code procéduraux et orientés objets, enfin vient la formation du jeu de données pour la prédiction de la qualité à partir d'une combinaison des mesures des métriques retenues pour la prédiction.\\
+Au chapitre 3	traite de l'implémentation, nous présentons le modèle de qualité mise en ?uvre pour l'évaluation de la qualité, le choix des environnements, leurs fonctionnement et leur utilisation.\\
+Au chapitre 4 nous avons les résultats expériences et analyses, ici nous faisons une description es jeux des données, ensuite appliquons les différents algorithmes respectivement avec une validation croisée, puis avec un échantillonnage de (80,20) c'est-à-dire 80\% du jeu de données pour la l'apprentissage et 20 \% pour la validation et enfin sur l'ensemble du jeu de données.\\
+Dans la conclusion générale nous présentons les limites et les perspectives de notre travail.
+
+\paragraph{Chapitre 1: État de l'art.}
+
+Dans ce chapitre, nous présenterons tout d'abord les gourous de la qualité, par la suite nous définirons la qualité du logiciel sous plusieurs aspects. Dans ce chapitre nous abordons également les modèles de qualité du logiciel qui sont les plus évoques dans la littérature.Enfin nous passons en revue les algorithmes d'apprentissage automatique pour l'évaluation de la qualité du logiciel et également les travaux qui se sont penchés sur l'évaluation de la qualité avec une approche d'intelligence artificielle.
+
+\paragraph{Chapitre 2: Pré-traitement des données et construction du jeu de données }
+
+Dans ce chapitre, nous nous concentrons sur la formation du data-set qui servira d'entrée  au système d'apprentissage automatique. Pour l'obtention de ce data-set nous servons des métriques de code extraites dans le code source du logiciel a partir d'une analyse statique du code.
+\paragraph{Chapitre 3: Implémentation:Présentation des différents outils Et interprétation des résultats }
+
+Dans ce chapitre, nous présentons les différents outils que nous utilisons, les environnements leurs fonctionnement et utilisation et enfin les résultats  
+
+\paragraph{Conclusion générale.}
+
+Nous y dressons un bilan de notre travail en faisant mention des difficultés rencontrées, et répertorions quelques perspectives d'amélioration de ce dernier.

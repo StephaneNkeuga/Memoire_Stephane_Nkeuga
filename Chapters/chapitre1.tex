@@ -1,0 +1,1399 @@
+% !TeX encoding = ISO-8859-1
+\chapter{état de l'art.} \label{chap:1}
+\minitoc
+
+\section{Introduction}
+\subsection{Paradigme de la qualité}
+Tout d'abord nous essayer de donner une définition appropriée au terme ''qualité'' notamment
+la qualité logicielle
+\subsubsection{Les Gourous de la qualité}
+Le terme qualité est un terme éminemment ambigu qui comporte plusieurs significations et implique des sens différents selon le contexte. Ainsi d'après certains acteurs dans
+la littérature appelé "gourous"  de la qualité on distingue la qualité selon :
+\subsubsection*{Deming}
+Deming accorde une place importante et une grande responsabilité à la gestion, aussi bien
+au niveau de l'individu que de l'entreprise. Pour lui, le contrôle est responsable de 94\%
+des problèmes de la qualité. Il dresse en quatorze points une méthodologie pour la gestion
+de la qualité. Elle est applicable par des petits ou des grands organismes des secteurs
+publics et privés. Sa méthodologie concerne aussi bien les problèmes organisationnels, de
+production, de gestion ou de maintenance. Pour Deming, la qualité, c'est la satisfaction
+du besoin des clients ou consommateurs[Deming, 1986].
+
+\subsubsection*{Crosby}
+
+L'approche de Crosby est le zéro défaut (zero defect) \cite{crosby1979quality}. Elle ne signifie pas
+que les erreurs ou les défauts ne sont pas acceptables. Les organisations ne doivent pas
+réfléchir en termes d'erreurs à venir ni planifier d'éventuels ajustements. Son approche se traduit en quatre points :\\
+La qualité est la conformité à la spécification des besoins \cite{crosby1979quality}. Ces besoins
+doivent être clairement définis, l'objectif étant la satisfaction des besoins du client.\\
+Le système de qualité est la prévention. La prévention avant l'évènement est plus efficace et rentable que sa détection après.\\
+La performance standard est d'atteindre le niveau de « zéro défaut ». L'objectif ne doit être rien d'autre qu'une qualité parfaite et les coûts de la prévention ne doivent pas croître de façon exponentielle à l'approche de l'état de « non-défaut » (zéro défaut) du produit. La qualité ne doit pas avoir un coût excessif.\\
+La mesure de la qualité est le prix de la non-conformité aux spécifications.\\
+Le coût des erreurs est le premier facteur de motivation et si les efforts vont dans le sens de leur prévention, il en ressortirait une meilleure production, moins de réajustements de travail et une meilleure satisfaction des besoins du client. Il propose également une méthodologie en quatorze étapes pour la mise en l'?uvre d'un processus de gestion de la qualité dans une entreprise ou organisation.\\
+
+\subsubsection*{Taguchi}
+Pour Taguchi, la qualité et la fiabilité doivent être effectives dès le niveau conceptuel, le but étant de construire ou fabriquer des produits qui sont (seront) insensibles
+aux variations pouvant apparaître dans n'importe quelle étape de leur cycle de vie. Il
+s'oppose ainsi à l'inspection ou à la recherche des défauts après fabrication. Taguchi dans
+ses travaux [Taguchi, 1986, Taguchi and Wu, 1980] développe une fonction de perte pour
+la qualité. Cette fonction est quadratique et en association avec la déviation (variation)
+sur la meilleure qualité attendue sur une caractéristique (propriété) donnée. Ainsi, cette
+variation de la fonction de perte est inversement proportionnelle à l'augmentation de la
+qualité [Taguchi, 1986].\\
+Suite aux approches de ces «gourous » de la qualité, celle-ci reste quelque chose de floue.
+Cependant, il ressort qu'elle est l'ensemble des critères fixés par une organisation pour la
+satisfaction du client par rapport à des produits ou services qu'elle propose. Nous présenterons ici un résumé des différents gourous de la qualité :\\
+1. La qualité est la conformité à des spécifications ou exigences[Crosby, 1979].\\
+2. La qualité est la satisfaction du besoin des clients ou consommateurs[Deming, 1986].\\
+Mais pour l'ingénierie du logiciel, qu'est-ce-que la qualité logicielle ? La notion de qualité
+est souvent subjective : elle varie en fonction des exigences, du métier, de la relation que
+l'on a avec le logiciel, du type même de logiciel. La qualité est-elle définie de la même
+manière selon que l'on soit le client (celui pour qui le logiciel a été conçu), l'utilisateur
+(celui qui se sert du logiciel au quotidien), le développeur (celui qui écrit les lignes de
+code), le testeur (celui qui valide le logiciel), ou encore le manager. Prenons tout d'abord
+les différentes définitions de la qualité logicielle :
+\begin{enumerate}
+	\item la norme ISO 9001 définit la qualité comme le degré auquel un ensemble de caractéristiques remplit les exigences (du client) [ISO/IEC, 2008] ;
+	\item le livre swebok donne la définition suivante : un ensemble de règles et de principes
+	à suivre au cours du développement d'une application afin de concevoir un logiciel répondant aux attentes (du client), le tout sans défaut d'exécution [Abran et al., 2004] ;
+	\item la norme ISO 9126 définit la qualité logicielle comme étant la capacité à satisfaire
+	les besoins exprimés et implicites [ISO/IEC, 2001] ;
+\end{enumerate}
+Ces différentes définitions mettent en avant les notions suivantes :
+\begin{itemize}
+	\item exprimer des besoins implicites et explicites ;
+	\item remplir des exigences, répondre aux attentes, être capable de satisfaire des besoins ;
+	\item  formaliser des ensembles de règles et principes à suivre ;
+	\item garantir qu'il n'y a pas de défaut d'exécution.
+\end{itemize}
+A partir de ces différentes considérations, les définitions et les principes suivants peuvent être posés : La qualité d'un logiciel est le degré auquel un logiciel remplit les besoins et
+exigences des clients sans défaut d'exécution. La qualité logicielle s'exprime sous forme de
+règles et de principes à suivre pour développer un logiciel capable de répondre aux attentes
+du client, c'est-à-dire développer un logiciel de qualité. Les besoins d'un client doivent être
+exprimés avec soin, de manière précise et détaillée et doivent faire l'objet d'une étude minutieuse. La qualité d'un logiciel repose donc sur deux notions essentielles : les attentes
+du client et l'absence de défaut.
+\subsection{Qualité du logiciel vue sous plusieurs aspects}
+La qualité est en général une notion ambiguë: cette ambigu\"ité réside dans la multitude de ses définitions employées dans chaque domaine. Selon Kan [1995]. cela peut être attribué à plusieurs facteurs car, la qualité est multidimensionnel. Elle dépend. en fait, de la nature de l'entité étudiée, de son environnement et de ses attributs. De plus, le terme <<qualité>>  fait partie de notre langage quotidien et sa popularité engendre plusieurs connotations (compréhensions) du terme qui peuvent être différentes de son utilisation professionnelle et scientifique. Différentes dimensions de la qualité sont résumées par Garrin [1984] en cinq vues à partir desquelles il décrit la qualité:
+\begin{itemize}
+	\item la vue transcendantale: la qualité est quelque chose qu'on peut reconnaître, mais qu'on ne peut pas définir;
+	\item la vue d'utilisateur: la qualité est la force apparente du produit pour réaliser des fonctinns;
+	\item la vue de fabrication : la qualité est la conformité aux spécifications
+	\item la vue du produit: la qualité est attachée aux caractéristiques intrinsèques du produit. c'est la vue la plus évoquée par les experts de la qualité du logiciel
+	\item la vue basée sur la valeur: la qualité dépend des coûts du produit\\
+\end{itemize}
+Dans le domaine des logiciels, cette confusion est limitée. Cependant, la qualité d'un logiciel est souvent définie dans un sens étroit comme l'absence de « bogues » dans le produit logiciel. Cette définition rejoint la notion de conformité, car un logiciel ayant des défauts est non conforme aux spécifications, mais elle ne mesure pas la satisfaction du client vis-à-vis de certains aspects, comme la facilité d'utilisation et de maintenance, la clarté de la documentation, etc. Une définition claire et juste de la qualité demeure encore un souci pour la communauté du génie logiciel. Deux voies de recherche sur la qualité sont généralement empruntées. Dans la première on s'occupe de la qualité du processus de développement du logiciel et on croit que la qualité de ce dernier détermine la qualité du produit logiciel. Dans la deuxième on juge qu'un bon processus ne garantit pas un bon produit et que la qualité de ce dernier est plutôt déterminée par un ensemble de propriétés intrinsèques contenues dans le produit.\\
+Selon une troisième perspective, Kitchenham et Pfleeger [19961, en analysant la question « qu'est ce
+qui distingue un bon logiciel d'un mauvais », soulignent que le contexte aide à déterminer la réponse. En effet, les fautes tolérées dans un logiciel de traitement de textes ne sont pas acceptées dans un système de contrôle de sécurité d'un avion. Par conséquent. Ils suggèrent que la qualité doit être considérée au moins de trois façons: la qualité du produit, la qualité du processus qui engendre le produit et la qualité du produit dans le contexte d'environnement où il sera utilisé.
+
+\subsubsection*{Qualité du produit}
+Si on demande à différentes personnes d'indiquer les caractéristiques d'un produit logiciel qu'elles
+jugent importantes pour sa qualité, il est très probable que leurs réponses soient différentes. Cela est
+dû au fait que l'importance des caractéristiques dépend du profil de la personne qui analyse le produit.
+En effet, l'utilisateur croit que la qualité réside dans la capacité du logiciel de faire ce qu'il veut et d'une manière simple (facilité d'utilisation). Il privilégie ainsi, les caractéristiques externes du produit. Cependant, un produit logiciel est jugé aussi par d'autres acteurs, comme celui qui le conçoit, celui qui l'implémente et celui qui fait sa maintenance après le codage et pendant la mise en opération. Ces acteurs voient la qualité à travers des caractéristiques internes du produit logiciel, avant même son achèvement [Pfleeger. 1998].\\
+Des modèles de qualité sont construits pour relier certaines caractéristiques internes avec des caractéristiques externes qui peuvent représenter la vue de l'utilisateur ou celle du développeur du logiciel. Par exemple. le modèle McCall. construit par McCall et ses collègues en 1977. montre comment les facteurs externes de la qualité sont reliés aux critères de la qualité de produit [McCall et Walters. 1977]\\
+Le modèle ISO 9126 est un standard de la qualité du produit grandement utilisé depuis sa création
+au début des années 80. Il est inspiré du modèle de McCall. En plus de l'organisation hiérarchique
+des différentes caractéristiques de la qualité du produit, le modèle ISO 9126 offre
+un ensemble de définitions et de termes usuels pour l'évaluation de la qualité du produit logiciel [ISO.
+2003]. Plus de détails surie standard ISO 9126 sont donnés dans la suite de ce mémoire
+
+\subsubsection*{Qualité du processus}
+L'intérêt pour la qualité du processus découle du fait qu'un produit logiciel peut rencontrer des problèmes sérieux, parce que certaines activités lors de son développement, sont négligées ou mal exécutées. Plusieurs chercheurs croient que la qualité du processus de développement et celui de maintenance est aussi importante que la qualité du produit. L'avantage d'améliorer la qualité d'un processus est de pouvoir améliorer en même temps la qualité des produits logiciels.
+De la même manière que pour la qualité du produit, des modèles d'amélioration du processus logiciel et d'évaluation de ses capacités sont proposés, comme CMM (Capability Maturity Model) et SPICE (Software Process Improvement and Capabilty dEterinination) [Pressman, 1996].
+\subsubsection*{Qualité dans un contexte d'environnement commercial}
+Ce niveau de la qualité du logiciel est proposé par Kitchenham et Pfleeger [1996]. Il essaie de
+montrer un autre côté du logiciel rarement analysé, à savoir, la qualité des services que le logiciel fournit dans le milieu économique où il est exploité. Il s'agit de la valeur économique d'un logiciel  [Simrnons, 1996]. Cette proposition vient de l'idée qui suppose que l'amélioration technique (la qualité technique du processus ou du produit) est traduite en valeurs économiques. plus de détails sont disponibles dans [Pllee2er. 1998]
+\subsection{Modèles d'évaluation de la qualité}
+Evaluer la qualité consiste à définir des règles, interpréter des indicateurs de qualité
+en fonction de ces règles, leur donner du sens et les utiliser pour qualifier des concepts
+qualitatifs. Pour y parvenir, les entreprises utilisent des modèles de qualité. Ces modèles
+définissent des concepts, des domaines et des règles qualitatifs qu'ils évaluent via les mesures et métriques effectuées sur le système. La pertinence d'un modèle de qualité est
+fondée sur sa capacité à modéliser, qualifier, évaluer un certain nombre de règles complexes à partir de mesures (comme par exemple évaluer la structure générale du code
+source à partir de métriques de code). Nous présentons les principaux modèles de qualité
+existants actuellement. Ce sont des modèles hiérarchiques qui recensent les principes de
+qualité en partant des exigences globales et des principes les plus généraux pour descendre
+vers les métriques qui permettent de les mesurer. Ceci implique que la mesure de la qualité
+ne peut débuter qu'une fois le modèle totalement spécifié et que les premiers résultats ne
+peuvent être obtenus qu'une fois la collecte des données suffisante.
+
+\subsubsection{Le modèle de McCall : Facteurs Critères Métriques-FCM: Qualité logiciel orienté produit}
+Le modèle de qualité de McCall introduit en 1977 [MRW77] est l'un des premiers modèles de ce
+type. Il est axé en priorité sur les développeurs et le processus de développement. En
+choisissant des facteurs de qualité des logiciels, qui reflètent le point de vue de l'utilisateur et du
+développeur, McCall et al... tente de combler le fossé entre ces deux parties prenantes.
+Le modèle de McCall est un modèle hiérarchique typique, basé sur les catégories. Au niveau
+supérieur, nous avons trois grandes perspectives. La perspective de la révision du produit, dans
+un premier temps, définit la capacité du produit logiciel à subir des changements. Ensuite, la
+perspective de transition du produit représente l'adaptabilité du logiciel à de nouveaux
+environnements et, enfin, les opérations du produit représentent les caractéristiques des
+opérations du logiciel. Chacune de ces trois catégories comprend plusieurs facteurs de qualité :
+
+\begin{itemize}
+	\item\textbf{Révision du produit} :
+	\item Maintenabilité : l'effort nécessaire pour localiser et réparer une défaillance du programme dans son environnement de fonctionnement
+	\item Flexibilité : la facilité d'apporter les changements requis par les modifications de l'environnement opérationnel
+	\item Testabilité : la facilité de tester le programme, afin de s'assurer qu'il est exempt d'erreurs et qu'il répond à ses spécifications
+	\item\textbf{Transition des produits} :
+	\item Portabilité : l'effort nécessaire pour transférer un programme d'un environnement à un autre
+	\item Réutilisation : la facilité de réutiliser un logiciel dans un contexte différent
+	\item Interopérabilité : l'effort nécessaire pour coupler le système à un autre système
+	\item\textbf{Opérations sur les produits} :
+	\item Correction : la mesure dans laquelle un programme est conforme à sa spécification
+	\item Fiabilité : la capacité des systèmes à ne pas tomber en panne
+	\item Efficacité : subdivisée en efficacité d'exécution et en efficacité de stockage, et signifiant généralement l'utilisation des ressources, par exemple le temps de processeur, le stockage
+	\item Intégrité : la protection du programme contre les accès non autorisés
+	\item Facilité d'utilisation : la facilité du logiciel
+\end{itemize}
+
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.2]{McCalls-Software-Quality-Factors.png}
+	\caption{Triangle de McCall}
+\end{figure}
+
+Dans le modèle de McCall, 23 critères de qualité sont également définis. Ces critères sont les
+attributs d'un ou de plusieurs facteurs de qualité. Des mesures sont utilisées afin de quantifier
+certains aspects des critères. Les mesures de qualité sont obtenues en répondant à un certain
+nombre de questions "oui" ou "non". En fonction de la réponse donnée, la qualité est évaluée. Le
+modèle de McCall a été critiqué parce que le jugement de la qualité est mesuré subjectivement,
+sur la base du jugement de la personne qui répond aux questions.
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.7]{mccall}
+	\end{center}
+	\caption{Model Mccall}
+\end{figure}
+\subsubsection{Boehm, qualité des produits logiciels}	
+Un autre modèle de qualité a été introduit par Boehm [BBK+78] en 1978. Il s'agit également d'un
+important pré-décesseur des modèles de qualité actuels. Boehm prend en compte les lacunes
+contemporaines des modèles qui évaluent automatiquement et quantitativement la qualité des
+logiciels. Fondamentalement, son modèle tente de définir qualitativement la qualité des logiciels
+par un ensemble donné d'attributs et de mesures. Il existe certains parallèles reconnaissables
+entre le modèle de McCall et le modèle de Boehm. Par exemple, tous deux proposent un modèle
+hiérarchique structuré avec des caractéristiques de haut niveau, de niveau intermédiaire et de
+bas niveau. Toutes ces caractéristiques influencent les niveaux de qualité supérieurs.
+Les caractéristiques de haut niveau de la hiérarchie de la qualité de Boehm comportent trois
+caractéristiques de haut niveau qui répondent aux trois principales questions que peut se poser
+un acheteur de logiciels.\\
+\begin{itemize}
+	\item Utilité en l'état : dans quelle mesure (facilement, sûrement, efficacement) puis-je l'utiliser en l'état ?
+	\item Maintenabilité : Est-il facile de comprendre, de modifier et de tester à nouveau ?
+	\item Portabilité : Puis-je toujours l'utiliser si je change d'environnement ?\\
+\end{itemize}
+
+Au niveau intermédiaire, il existe 7 facteurs de qualité qui représentent les qualités
+attendues d'un système logiciel :
+\begin{itemize}
+	\item Portabilité : Le code peut être utilisé facilement et correctement dans d'autres environnements.
+	\item Fiabilité : Le code remplit ses fonctions de manière satisfaisante.
+	\item L'efficacité : Le code exécute son intention sans gaspillage de ressources.
+	\item Utilisabilité : Le code est fiable, efficace et conçu dans le respect de l'homme.
+	\item Testabilité : Le code facilite la mise en place de critères de vérification et permet d'évaluer ses performances.
+	\item La compréhensibilité : Le code est facile à lire dans le sens où les inspecteurs peuvent
+	rapidement reconnaître son utilité.
+	\item Flexibilité : Le code est facile à modifier, lorsqu'un changement souhaité a été déterminé.\\
+\end{itemize}
+
+Au niveau inférieur du modèle, il existe des hiérarchies de métriques de caractéristiques
+primitives. Ces caractéristiques constituent la base de la définition des métriques de qualité.
+Construire une telle base était l'un des objectifs que Boehm voulait atteindre. Le modèle
+propose donc au moins une métrique, qui devrait mesurer une caractéristique primitive donnée. Boehm a défini la métrique comme "une mesure de l'étendue ou du degré auquel un produit possède et présente une certaine caractéristique (de qualité)".
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.7]{boeh.jpg}
+	\caption{Modèle de Boehm}
+	\label{boehm}
+\end{figure}
+La figure \ref{boehm} montre les caractéristiques de haut niveau (utilité telle quelle, maintenabilité,
+portabilité), qui sont nécessaires à l'utilité générale. Au niveau inférieur, on trouve les mesures
+caractéristiques comme l'indépendance de l'appareil, l'autonomie, la précision, l'exhaustivité, la
+robustesse/intégrité, la cohérence, la responsabilité, l'efficacité de l'appareil, l'accessibilité, la
+communication, l'autodescription, la clarté, la lisibilité et la capacité d'augmenter.
+La plus grande différence entre Boehm et McCall est que le modèle de Boehm repose sur un
+large éventail de caractéristiques de qualité, avec un accent particulier sur la maintenabilité.
+McCall, en revanche, se concentre davantage sur la mesure précise de la propriété de haut
+niveau "As-is Utility".
+\subsubsection{La norme ISO-9126}
+Le modèle définit par  la norme ISO-9126 décrit un ensemble de caractéristiques et de sous-caractéristiques
+liées à la qualité d'une application, à la fois internes et externes. Ce modèle considère six caractéristiques de base (fiabilité, efficacité, etc.) figure \ref{iso9126}, subdivisées en sous-caractéristiques. Les six caractéristiques du modèles ISO-9126 sont composées d'attributs
+mesurables ou non.
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.8]{iso9126.png}
+	\caption{Le Modèle de qualité de la norme ISO 9126}
+	\label{iso9126}
+\end{figure}
+Ce modèle tire son origine des modèles de [McCall J. Richards P. Walters G., 1977] et
+de [Boehm et al., 1978]. C'est un modèle générique qui permet aux usagers de développer leurs propres critères. Ce modèle n'atteint pas le niveau des métriques. Il laisse aux utilisateurs le choix des métriques à implémenter dans leur modèle. ISO est également à l'origine d'autres normes et modèles sur les logiciels basés sur l'aspect gestion des processus de développement et d'évolution de la qualité. Comme nous le verrons plus bas, les trois aspects de la qualité du logiciel sont reliés deux à deux par la complémentarité. Les évolutions futures de ISO 9126 comme SQUARE (Software Product QUAlity Requirement and Evaluation [W. Suryn, 2003] tiennent compte et intègrent ces évolutions.
+SQUARE ajoute également l'évaluation de la qualité obtenue. SQUARE préconise les quatre étapes suivantes :
+\begin{itemize}
+	\item fixer les exigences de la qualité, comme par exemple les spécifications à respecter;
+	\item établir un modèle de qualité, par le choix d'un modèle de qualité adapté aux besoins
+	de l'utilisateur;
+	\item fixer les métriques de qualité, le choix judicieux des métriques intervenant dans le
+	processus d'évaluation de la qualité;
+	\item conduire des évaluations.
+\end{itemize}
+ 
+
+\subsubsection{SQuaRE, Software product QUAlity Requirement and Evaluation}
+La norme SQuaRE définie depuis 2005 est la norme qui succède au standard ISO
+9126. Elle a été définie à partir de ISO 9126 et de la partie évaluation de la norme ISO
+14598 [ISO/IEC, 2005]. Elle a pour objectif d'intégrer ces deux normes pour n'en former qu'une. Elle veut également répondre aux différents besoins de la qualité selon les
+acteurs (développeurs, testeurs, utilisateurs, clients). De plus, elle unifie les différents documents normatifs autour de la qualité. SQuaRE définit quatre étapes pour permettre
+une meilleure évaluation de la qualité : définir les exigences, établir un modèle de qualité,
+définir les métriques de la qualité et évaluer la qualité.
+\subsubsection*{Différences par rapport à ISO 9126}
+
+La norme SQuaRE reprend le modèle défini dans ISO 9126 et y apporte les changements suivants :
+\begin{itemize}
+	\item La portée du modèle de qualité a été étendue pour y inclure la qualité à l'utilisation en tant que modèle à part entière (il reste cependant le facteur facilité d'utilisation dans le modèle) ;
+	\item La norme définit deux modèles de qualité : le modèle se référant à la qualité en production et celui mesurant la qualité à l'utilisation ;
+	\item La sécurité est devenue une caractéristique au lieu d'être une sous-caractéristique de la fonctionnalité ;
+	\item La portabilité a été scindée en deux : d'un côté la portabilité qui fait référence uniquement à la facilité d'installation et l'interchangeabilité, et de l'autre la compatibilité qui
+	inclut l'interopérabilité ;
+	\item Les sous-caractéristiques suivantes ont été ajoutées : robustesse, utilité, accessibilité technique, modularité, réutilisabilité et portabilité ;
+	\item Plusieurs caractéristiques et sous-caractéristiques ont été précisées et renommées.
+\end{itemize}
+\begin{center}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=1]{saqure.png}
+		\caption{Modèle SQuaRE}
+	\end{figure}
+\end{center}
+
+\subsubsection{Dromey}
+Dans son travail [Dro95], Dromey souligne que les logiciels ne manifestent pas directement des
+attributs de qualité de haut niveau. Les logiciels ne possèdent que des caractéristiques de
+produit qui influencent les attributs de qualité. De mauvaises caractéristiques de produit
+réduisent ses attributs de qualité. Les modèles mentionnés ci-dessus n'établissent pas de lien
+explicite entre les attributs de qualité et les caractéristiques du produit. Le modèle de Dromey se
+concentre sur le produit logiciel principal, le code. Cette orientation vers le produit est la
+question la plus importante du travail de Dromey.\\
+Selon Dromey, une décomposition directe des attributs dans le style du modèle ISO n'est
+pas la meilleure façon de procéder, car cela ne conduit qu'à d'autres attributs vagues. Il propose
+un seul niveau de "propriétés porteuses de qualité" entre les attributs de haut niveau et les
+composants du produit. C'est ce qui a donné naissance à son modèle générique (voir figure \ref{dromey}).
+Ce cadre permet une modélisation descendante (à chaque attribut de qualité de haut niveau, des
+propriétés porteuses de qualité peuvent être attribuées) ainsi qu'une modélisation ascendante
+(pour chaque composant, des propriétés porteuses de qualité sont identifiables, ce qui est
+important pour garantir les attributs de haut niveau).\\
+Dans le contexte du développement de logiciels, Dromey met les "composants" au même
+niveau que les "formes structurelles" des langages de programmation (par exemple, les
+expressions, les variables, les boucles, etc.). L'ensemble des "formes structurelles" est
+déterminé par le langage de programmation. 
+%La figure 4.3 présente un exemple de la manière
+%dont une telle forme d'affectation de la structure aux propriétés porteuses de qualité pourrait
+%ressembler. Si l'une de ces propriétés est endommagée, cela entraîne un défaut de qualité qui
+%réduit l'intégrité de la propriété de qualité. Une "violation d'une propriété" ne signifie pas la
+%même chose que "le logiciel présente un défaut de fonctionnement". Dans certaines
+%circonstances, seules les propriétés non fonctionnelles sont touchées par les défauts de qualité.
+%Par exemple, une expression incohérente contient des effets secondaires. Cela ne doit pas conduire
+%à un défaut fonctionnel mais rend la maintenance plus difficile.\\
+Dromey propose un ensemble de propriétés structurelles. Un aperçu est présenté dans le
+tableau \ref{tabdromey}. A titre d'exemple, nous discutons de la propriété porteuse de qualité "Assignée".
+Une variable est assignée si elle
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=1]{dromey.jpg}
+	\caption{Modèle générique de la Drôme [Dro95]. Le diagramme montre toutes les relations
+		potentielles. Les flèches pleines sont importantes pour le modèle.}
+	\label{dromey}
+\end{figure}
+reçoit une valeur avant sa première utilisation. La propriété "assignée" peut donc être appliquée
+à des variables. Cela signifie que si notre code ne comporte pas de variables non assignées, nous
+avons intégré la qualité dans notre logiciel. Cette relation constitue la base du modèle de
+Dromey. Sur cette base, la connexion aux attributs de haut niveau peut être construite de
+manière similaire. Les propriétés du produit caractérisent les exigences qui doivent être
+satisfaites pour construire un attribut de qualité de haut niveau dans le logiciel. La partie la plus
+difficile dans cette situation est d'évaluer quelle propriété du produit a l'influence la plus
+significative sur l'attribut de qualité. Pour son modèle, Dromey a choisi une liste d'attributs de
+qualité, qui est similaire à la norme ISO 9126 (fonctionnalité, fiabilité, convivialité, efficacité,
+maintenabilité, portabilité). Comme extension de la norme ISO 9126, il a ajouté la réutilisabilité
+des attributs, qu'il considère comme un sujet important.
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline 
+			\textbf{Propriétés } &\textbf{Propriétés } &\textbf{Propriétés }  &\textbf{Propriétés}  \\ 
+			\textbf{de Correction} &\textbf{Structurelles} &\textbf{ de Modularité}&\textbf{Descriptives}\\
+			\hline 
+			programmable&  structuré & paramétré & spécifié \\ 
+			\hline 
+			complet &  résolu & couplage faible (loosely coupled) &  documenté \\ 
+			\hline 
+			assigné &  homogène & encapsul, & auto-descriptif \\ 
+			\hline 
+			précis& effectif& cohésif &  \\ 
+			\hline 
+			initialisé & non-redondant &générique &  \\ 
+			\hline 
+			progressif & direct & abstrait &  \\ 
+			\hline 
+			variant & ajustable &  &  \\ 
+			\hline 
+			consistant  & intervalle-indépendant &  &  \\ 
+			\hline 
+			& utilisé &  &  \\ 
+			\hline 
+		\end{tabular} 
+		
+	\end{center}
+	\caption{Liste des propriétés porteuses de qualité. Chacune de ces propriétés peut être
+		appliquée à une ou plusieurs formes structurelles(les expressions, les variables, les boucles), et affecte un ou plusieurs attributs de qualité}
+\label{tabdromey}
+\end{table}
+
+
+\subsubsection{Le modèle GQM (Goal Question Metrics)} 
+L'objectif principal d'un modèle est la représentation d'une réalité afin de l'étudier. Cela
+passe par la collecte de toute information permettant de décrypter le modèle. Par syllogisme un modèle de qualité devrait permettre de mesurer les caractéristiques, c'est-à-dire
+proposer des métriques ayant un rapport avec les caractéristiques. Le modèle GQM proposé par [Basili et al., 1994] est une approche basée sur le concept de métrique. Ils considèrent que la mesure de la qualité commence par la définition d'objectifs ou buts (goals)
+à atteindre. La deuxième étape consiste en la définition des questions dont le propos est
+d'expliciter la façon dont les buts seront atteints. La troisième étape définit les mesures
+associées aux questions et dont l'interprétation donne une réponse à ces questions. Le
+résultat de l'application (l'implémentation) de l'approche GQM est la spécification d'un
+système de mesure orienté vers un ensemble de règles pour l'interprétation des données
+mesurées. Le modèle GQM constitué est composé de trois niveaux hiérarchiques avec comme point de départ les objectifs à atteindre de la figure \ref{gqm} :
+\begin{itemize}
+	\item Le niveau conceptuel(Goal) : ce niveau définit les buts ou objectifs à atteindre. Un but
+	relève de différents points de vues selon lesquels le logiciel est analysé et peut concerner
+	les différents artefacts logiciels, le processus de développement ou les ressources mises
+	en \oe uvre dans le cadre de ce processus (spécification, modélisation, conception, test,
+	etc.).
+	\item Le niveau opérationnel (Question) : il est formé de l'ensemble des questions associées
+	à un objectif particulier.
+	\item Le niveau quantitatif (Metric) : il est formé de l'ensemble de données associées à une
+	question, elles peuvent être objectives ou subjectives.
+\end{itemize}
+Le modèle GQM est essentiellement orienté organisation et projet. Il a d'ailleurs été
+implémenté à la NASA. \\
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.5]{cqm.png}
+	\caption{Modèle GQM}
+	\label{gqm}
+\end{figure}
+
+\section{Evaluation de la qualité Logicielle}
+Nous avons tout d'abord recensé les différentes les modèles de qualité les plus utilisées. La plupart de ces modèles permettent de déterminer la qualité d'un logiciel dans son ensemble et fournir une vue globale satisfaisante, notamment les modèles ISO-9126, SQuaRE tandis que d'autre notamment le modèle QCM donne à la fois une vue globale et une vue détaillée de la qualité logicielle. Comment donner un sens aux mesures sous l'angle de la qualité ? Les modèles hiérarchiques attribuent des notes déterminant le niveau de qualité d'un logiciel à partir de deux types différents de mesures : les métriques et les données brutes.
+
+\subsection{Évaluation avec les métriques}
+Une métrique est un moyen permettant de connaître la distance entre deux points.
+Appliquée à la production du logiciel, une métrique est un indicateur d'avancement ou de
+qualité des développements logiciels. Les métriques sont considérées à juste titre comme
+des indicateurs de la qualité par Basili [Basili et al., 1996]. Une métrique peut être simple
+(le nombre de lignes d'un programme) ou complexe (le couplage entre classes), la métrique
+n'est pas un état mais juste un reflet, une vision de la réalité. Aussi pour qualifier faut-il réaliser plusieurs mesures avec des instruments différents. Avoir une bonne idée d'un
+état, nécessite de disposer de plusieurs métriques. En métrologie, on a le plus souvent
+affaire à des données physiques, or le logiciel est une donnée abstraite. La transposition
+à l'ingénierie du logiciel a été l'objet de nombreux travaux fondateurs d'un cadre pour
+la mesure dans du logiciel les auteurs [Melton et al., 1990, Fenton, 1994, Weyuker, 1988,
+Briand et al., 1996],[Zuse and Bollmann, 1989, Zuse and Bollmann-Sdorra, 1992]de ces travaux ont plaidé pour un cadre théorique de la mesure pour l'ingénierie des logiciels. Ces
+travaux théoriques ont été complétés par des études théoriques sur la validation des mesures [Briand et al., 1995, Kitchenham et al., 1995, Schneidewind, 1992, Shepperd and Ince, 1991,
+Henderson-Sellers, 1996] . Les premiers travaux sur la mesure des applications logicielles
+procédurales furent ceux de Halstead [Halstead et al., 1977] et[McCall et al., 1977] et concernaient des logiciels écrits en langage procédural Chidamber [Chidamber and Kemerer, 1994] propose des mesures pour le paradigme orienté objet, mesures qui seront très activement étudiées et validées par des nombreux travaux au regard du succès du paradigme objet [Briand et al., 1998, Briand et al., 1999, Basili et al., 1996, Zuse, 2013, e Abreu and Melo, 1996].
+\subsection{Les métriques de code conventionnelles}
+Cette catégorie regroupe les métriques basiques couramment utilisées pour évaluer certaines
+propriétés du code source. Ces métriques s'appliquent à tout type de langage - procédural ou objet par exemple.
+\subsubsection{Halstead}
+Halstead est le pionnier dans le domaine de la métrique en génie logiciel. Il est le premier
+à proposer quatre mesures ou métriques sur le logiciel. Il part du constat, que les composants de base d'un programme telles que les expressions peuvent se classer en opérandes et opérateurs. De ces observations, il en déduit quatre métriques primitives de la façon
+suivante :
+\begin{itemize}
+	\item$n_{1}$ nombre unique d'opérateurs dans un programme,
+	\item$n_{2}$ le nombre unique d'opérandes dans un programme,
+	\item$N_{1}$ le nombre total d'opérateurs dans un programme,
+	\item$N_{2}$ le nombre total d'opérandes dans le programme.\\
+	
+A partir de ces quatre métriques, il crée un ensemble de métriques pour évaluer des propriétés du programme ainsi :
+	\item n = $n_{1} + n_{2}$ le vocabulaire d'un programme
+	\item N = $N_{1} + N_{2}$ la taille d'un programme
+	\item V = $N\log_{2}n_{1}$ le volume d'un programme
+	\item $ \hat{N}$ = $n_{1}\log_{2}n_{1} + n_{2}\log_{2}n_{2}$ la taille estimé d'un programme
+\end{itemize}
+Nous ne donnerons pas ici toutes les métriques issues des travaux \cite{halstead1977elements}. Dans
+ces mesures, il n'est pas clairement dit quels attributs de la qualité on mesure. De même, Halstead ne propose pas une validation de ces mesures. Néanmoins des travaux par la suite ont intégré les métriques d'Halstead dans la mesure de la complexité d'un programme apportant la décision sur sa maintenabilité.
+\subsubsection{McCabe : Complexité cyclomatique}
+\textbf{Nom} Complexité cyclomatique\\
+\textbf{Acronyme} V(G)\\
+\textbf{Références} [McCabe, 1976]\\
+\textbf{Définition :}
+La complexité cyclomatique est la plus connue des mesures de base. Elle a été développée par Thomas McCabe en 1976 \cite{mccabe1976complexity}. Cette mesure provient de la théorie
+des graphes, c'est le nombre cyclomatique qui indique le nombre de régions dans un
+graphe. Telle qu'appliquée dans le génie logiciel, c'est le nombre de chemins linéairement
+indépendants que comprend un programme. Elle peut être utilisée pour indiquer l'effort
+requis pour tester un logiciel. Pour déterminer les chemins, le programme logiciel est représenté comme un graphe fortement connexe avec une entrée et une sortie unique. La formule pour calculer la complexité cyclomatique est la suivante :\\
+M = V (G) = e-n+2p où :
+\begin{itemize}
+	\item  \emph{V (G)} est le nombre cyclomatique du graphe G du programme,
+	\item \emph{e } est le nombre d'arcs,
+	\item \emph{n} est le nombre de n\oe uds,
+	\item \emph{p} est le nombre de composantes connexes du graphe.Généralement p est égal à 1.\\
+\end{itemize}
+La complexité cyclomatique est additive. La complexité de plusieurs graphes considérés comme un groupe égale la somme des complexités individuelles de chaque graphe.
+La complexité cyclomatique ignore la complexité des éléments séquentiels. Elle s'applique donc dans les programmes à des imbrications de boucles ou d'instructions de test. La mesure de la complexité cyclomatique se veut indépendante du langage : elle se calcule de la même façon pour tous les langages qu'ils soient fonctionnels, procéduraux ou orientés objets. La complexité cyclomatique est utilisée dans le cadre de la maintenabilité, de la testabilité et la compréhensibilité des programmes.\\
+Dans cette formule, les arcs sont les branches d'un programme, les n\oe uds sont les blocs d'instructions séquentielles. De plus, tel qu'est défini le graphe de flot de contrôle,\emph{p} a pour valeur 1 : il n'existe qu'un seul composant connecté. La figure \ref{complexite} représente l'exemple suivant : le schéma supérieur représente le graphe du programme et les trois graphes inférieurs représentent chacun un chemin possible dans ce graphe. Dans cet exemple, e vaut 8, n vaut 7 et p vaut 1. Donc la valeur de V (G) est de 3. Il y a
+effectivement 3 chemins linéairement indépendants dans cet exemple (ils sont représentés en couleur sur l'exemple). La complexité cyclomatique d'un programme a pour valeur minimum 1 puisqu'il y a toujours au moins un chemin possible.\\
+\textbf{Portée} Fonction, Méthode, Classe
+
+\begin{center}
+	\includegraphics[scale=0.4]{cc1.PNG} 
+\end{center}
+
+\begin{table}[H]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\includegraphics[scale=0.4]{cc2.PNG} & \includegraphics[scale=0.4]{cc3.PNG} & \includegraphics[scale=0.4]{cc4.PNG}
+		\end{tabular}
+		
+	\end{center}
+	\caption{Un exemple de graphe de flot de contrôle avec les trois différents chemins
+		linéairement indépendants.}
+	\label{complexite}
+\end{table}
+\subsubsection{Les lignes de code}
+Les mesures les plus largement utilisées concernent les lignes de code. Très simples à comprendre,
+ces métriques doivent pourtant être définies précisément. En effet, la composition d'une ligne de
+code varie et le moyen de compter les lignes de code n'est pas toujours compris de la même manière.
+Prenons l'exemple suivant, sans difficulté apparente :
+for (i = 0; i < 10; i+ = 1) printf("hello World") ; /* une ligne de code avec une boucle */
+Cet exemple contient une ligne de code mais plusieurs instructions et également un commentaire.
+On peut donc considérer que cette ligne contient :
+\begin{itemize}
+	\item une ligne physique ;
+	\item deux lignes logiques ;
+	\item une ligne de commentaires.\\
+\end{itemize}
+Cet exemple illustre donc les différentes métriques que nous pouvons appliquer aux lignes de
+code.
+\subsubsection*{SLOC}
+\textbf{Nom:  Nombre de lignes de code source}\\
+\textbf{Acronyme: SLOC}\\
+\textbf{Références: }[Kan, 2002]\\
+\textbf{Définition} La métrique SLOC pour Source Line Of Code mesure la taille d'un logiciel en déterminant le nombre de lignes de son code source.
+Cette métrique ne tient en principe pas compte des commentaires. Cependant, même si le plus
+courant est de compter le nombre de lignes physiques d'un programme sans tenir compte des
+lignes vides, certains utilitaires vont compter le nombre de lignes logiques ou encore vont avoir
+leur propre définition de dénombrement, comme l'illustre Park à travers la check-list qui définit
+les règles de calcul de SLOC [Park, 1992].\\
+\textbf{Portée: Fonction, Méthode}
+\subsubsection*{CLOC}
+\textbf{Nom : Lignes de commentaires}\\
+\textbf{Acronyme: CLOC}\\
+\textbf{Références:} [Kan, 2002]\\
+\textbf{Définition:} La métrique CLOC pour Comments Lines Of Code détermine le nombre de lignes de
+commentaires dans un programme.\\
+\textbf{Portée; Fonction, Méthode}
+
+\subsubsection{Les métriques de code orienté objet}
+Les métriques conventionnelles sont de bons indicateurs mais ne correspondent pas toujours aux
+exigences et particularités du code orienté objet. En particulier Moreau et Dominick ont montré que
+les métriques traditionnelles ne s'appliquent pas au design orienté objet [Moreau et Dominick, 1989].
+Par exemple, mesurer le nombre de lignes de code (SLOC ) ne leur apparaît pas suffisant dans le cadre orienté objet. C'est pourquoi ils suggèrent d'associer cette mesure avec par exemple, la profondeur
+d'héritage pour prendre en compte la réelle complexité du code.
+Par ailleurs, Tegarden présente le résultat d'une série de mesures sur quatre systèmes et prouve
+que les métriques traditionnelles telles que SLOC, la complexité cyclomatique ou encore les métriques
+de Halstead sont utiles pour interpréter la complexité du design orienté objet mais que ces seules
+métriques ne suffisent pas [Tegarden et al., 1992] .
+\subsubsection{Les métriques de Chidamber et Kemerer}
+Les métriques suivantes, parfois appelées les métriques CK, ont été regroupées par Chidamber
+et Kemerer comme constituant un ensemble de métriques de base d'analyse du code source orienté
+objet [Chidamber et Kemerer, 1994] :\\
+\textbf{WMC} pour Weighted Methods per Class ;\\
+\textbf{DIT} pour Depth of Inheritance Tree ;\\
+\textbf{NOC} pour Number Of Children ;\\
+\textbf{RFC} pour Response For a Class ;\\
+\textbf{LCOM} pour Lack of Cohesion in Methods  ;\\
+\textbf{CBO} pour Coupling Between Objects\\
+\\
+\textbf{Nom Nombre pondéré de méthodes par classe (Weighted Methods per Class)}\\
+\textbf{Acronyme: WMC}\\
+\textbf{Références: }[Chidamber et Kemerer, 1994]\\
+\textbf{Définition} WMC comptabilise le nombre de méthodes définies pour une classe donnée, pondérées
+par leur complexité, sachant que la complexité s'entend ici en terme de complexité cyclomatique.\\
+\textbf{Portée: Classe}\\
+
+\textbf{Nom Profondeur de l'arbre d'héritage (Depth of Inheritance Tree)}\\
+\textbf{Acronyme: DIT}\\
+\textbf{Références :}[Lorenz et Kidd, 1994],[Chidamber et Kemerer, 1994],[Briand et al., 1996],
+[Gyim\'othy et al., 2005],[Li et Henry, 1993],[Hitz et Montazeri, 1995],[Tempero et al., 2008]\\
+\textbf{Définition} La profondeur d'héritage d'une classe correspond à la profondeur maximum de la classe
+dans l'arbre d'héritage, i.e., depuis la racine jusqu'au n?ud de la classe, mesurée en nombre
+d'ancêtres de la classe. Plus une classe est profonde dans l'arbre d'héritage, plus le nombre de
+méthodes héritées est élevé, ce qui rend la prédiction et la compréhension de son comportement
+plus complexe. Un arbre d'héritage profond résulte d'un design complexe avec des classes et des
+méthodes très imbriquées. En revanche, cela diminue le potentiel de réutilisation des méthodes
+héritées.\\
+\\
+\textbf{Portée: Classe}\\
+\textbf{Nom Nombre de fils dans l'arbre d'héritage (Number Of Children)}\\
+\textbf{Acronyme: NOC}\\
+\textbf{Références:} [Chidamber et Kemerer, 1994, Gyimóthy et al., 2005]\\
+\textbf{Définition }Comptabilise le nombre de sous-classes immédiatement subordonnées à la classe dans la hiérarchie.\\
+\textbf{Portée: Classe}\\
+\textbf{Nom Réponse pour une classe (Response For a Class)}\\
+\textbf{Acronyme: RFC}\\
+\textbf{Références:} [Chidamber et Kemerer, 1994]\\
+\textbf{Définition} RFC compte le nombre de méthodes accessibles par la classe, qu'elles soient implémentées directement, surchargées ou disponibles par héritage (méthodes publiques, protégées et du package, pour Java). Elle correspond à la somme du nombre de méthodes héritées (NIM - voir plus loin), du nombre de méthodes surchargées (NRM - voir plus loin) et du nombre de méthodes implémentées (WMC ).\\
+\textbf{Portée: Classe}
+
+\subsubsection{Les métriques de Lorenz et Kidd}
+Lorenz et Kidd ont déterminé également un certain nombre d'autres métriques de base dont nous
+retiendrons les principales [Lorenz et Kidd, 1994] :\\
+\textbf{NOM} pour Number Of Methods ;\\
+\textbf{NIM }pour Number of Inherited Methods ;\\
+\textbf{NRM} pour Number of overRiden Methods ;\\
+\textbf{SIX} pour Specialization IndeX.\\
+Nous donnons maintenant une définition précise de chacune de ces métriques.\\
+
+\textbf{Nom Nombre de méthodes (Number of Methods)}\\
+\textbf{Acronyme :NOM}\\
+\textbf{Références} [Lorenz et Kidd, 1994]\\
+\textbf{Définition} NOM comptabilise le nombre de méthodes définies localement à une classe, comptant
+les méthodes privées aussi bien que publiques. Les méthodes surchargées sont également comptabilisées.\\
+\textbf{Portée; Classe}\\
+\\
+\textbf{Nom Nombre de méthodes héritées (Number of Inherited Methods)}\\
+\textbf{Acronyme: NIM}\\
+\textbf{Références} [Lorenz et Kidd, 1994, Briand et al., 1998a]\\
+\textbf{Définition} NIM est une métrique simple qui permet de mesurer le nombre de comportements/
+propriétés qu'une classe peut réutiliser. Elle compte le nombre de méthodes héritées par une
+classe : les méthodes auxquelles une classe peut accéder par l'intermédiaire de ses super-classes.\\
+\textbf{Portée: Classe}\\
+\textbf{Nom Nombre de méthodes surchargées (Number of overRiden Methods)}\\
+\textbf{Acronyme: NRM}\\
+\textbf{Références :}[Lorenz et Kidd, 1994]\\
+\textbf{Définition} NRM comptabilise le nombre de méthodes surchargées i.e., définies dans la super-classe et redéfinies dans la classe. Cette métrique inclut les méthodes super.\\
+\textbf{Portée: Classe}\\
+\\
+\textbf{Nom Index de spécialisation (Specialization IndeX)}\\
+\textbf{Acronyme: SIX}\\
+\textbf{Références} [Lorenz et Kidd, 1994, Mayer, 1999]\\
+\textbf{Définition}\\
+$$SIX=\frac{NRM * DIT}{NOM + NIM}$$
+Cette métrique détermine le niveau de spécialisation d'une classe en tenant compte de sa
+profondeur d'héritage. Cette métrique fait le ratio entre le nombre de méthodes surchargées
+et le total des méthodes définies dans la classe, pondéré par la profondeur d'héritage. Lorenz
+et Kidd précisent que les méthodes qui invoquent les méthodes super ou qui surchargent des \textit{templates} ne sont pas inclues. La redéfinition et la surcharge de méthodes sont de moins en
+moins souhaitables au fur et à mesure où l'on descend dans la hiérarchie d'une classe. Cela
+augmente la complexité du développement.
+\textbf{Portée: Classe}\\
+\subsubsection{Les métriques de design}
+Ces métriques évaluent les entités d'un code source par rapport au respect des principes de
+design. Ces métriques, en faisant ressortir les entités qui ne respectent pas ces principes, mettent en
+évidence les lacunes générales du design dont la correction peut amener une amélioration globale de
+la qualité. Nous distinguons les métriques qui traitent du couplage, les métriques qui mesurent la cohésion de classes et les métriques qui évaluent la cohésion des packages.\\
+\textbf{Nom Couplage entre les objets (Coupling Between Object classes)}\\
+\textbf{Acronyme: CBO}\\
+\textbf{Références:} [Chidamber et Kemerer, 1994],[Fenton et Pfleeger, 1996],[Martin, 2005]\\
+\textbf{Définition:} Deux classes sont couplées ensemble si l'une d'elles utilise l'autre, i.e., une classe appelle
+une méthode ou accède à un attribut d'une autre classe. Le couplage à travers l'héritage et le
+polymorphisme sont également pris en compte. Pour une classe, la métrique CBO compte le
+nombre de classes auxquelles elle est reliée, couplée.\\
+\textbf{Portée: Classe}\\
+\textbf{Nom Manque de cohésion des méthodes (Lack of COhesion in Methods)}\\
+\textbf{Acronyme: LCOM1}\\
+\textbf{Références:} [Chidamber et Kemerer, 1994][Briand et al., 1998b]\\
+\textbf{Définition} LCOM1 est le nombre de paires de méthodes dans une classe qui ne référencent pas
+d'attribut commun.\\
+\textbf{Portée: Classe}\\ \\
+Envisageons une évaluation avec les métriques. Il se pose deux principaux problèmes. Tout d'abord,
+les métriques sont définies et mesurées pour certains composants du logiciel : la métrique SLOC
+(nombre de lignes de code source) par exemple est calculée pour une méthode donnée ou encore
+la métrique DIT (profondeur d'héritage) calculée pour une classe donnée. Il n'est donc pas aisé de
+transposer les résultats obtenus pour des composants vers une évaluation qualitative de plus haut
+niveau. D'autre part, les principes qualitatifs tels qu'ils sont définis font le plus souvent appel à
+l'utilisation de plusieurs métriques. Par exemple, la norme ISO 9126 définit la sous-caractéristique
+facilité de modification comme ''la capacité d'un logiciel à intégrer de nouvelles implémentation''.
+Pour mesurer cette propriété, les métriques telles que le nombre de lignes de code (SLOC ), la
+complexité cyclomatique, le nombre de méthodes par classe, la profondeur d'héritage (DIT) sont
+combinées de manière à déterminer à partir de toutes ces mesures une seule et unique note pour
+cette sous-caractéristique.\\ \\
+Pour parvenir à évaluer un critère de qualité à partir de métriques il faut donc procéder
+en deux étapes :
+la combinaison. La première consiste à combiner les métriques retenues entre-elles. Cette
+étape qui pourra être exécutée de différentes manières permet d'obtenir une note
+qualitative pour un composant donné : par exemple, en combinant la métrique CLOC
+avec la métrique V(G) pour chaque méthode d'un projet. Nous nommons cette étape
+la combinaison. On cherche en effet à donner du sens, un sens qualitatif en combinant
+des mesures différentes ;
+l'agrégation. La seconde étape consiste à agréger ces notes obtenues au niveau de chacun
+des composants en une note globale pour la totalité du projet. Nous nommons cette
+étape l'agrégation. Celle-ci relève plus d'un aspect statistique. On détermine à partir
+d'un ensemble de mesures la valeur générale qui s'en dégage.\\ \\
+\textbf{La combinaison de métriques}\\
+L'étape de combinaison des métriques implique de tenir compte des intervalles de mesure de
+celle-ci, ce qui entraîne deux points importants. Tout d'abord, les intervalles des métriques peuvent être totalement différents, par exemple, le critère facilité de modification qui utilise les métriques SLOC, V(G), et DIT. Ces trois métriques ne possèdent pas les mêmes échelles de valeurs. Il faut alors s'assurer que la combinaison ne dilue pas les mesures de l'une par rapport à l'autre. Ensuite, les métriques possèdent toutes leur propre sens : SLOC renseigne sur le nombre de lignes d'une méthode, tandis que V(G) nous fournit une information sur la complexité, et DIT qualifie la profondeur d'héritage. Ceci impose de les utiliser de manière différente et de faire en sorte de garder le sens des unes par rapport aux autres. Pour y parvenir, la combinaison des métriques doit être élaborée spécifiquement pour chaque critère évalué. Dans la table 3.1 à propos du taux de commentaires d'un code, par exemple, l'opération de multiplication de CLOC avec V(G) n'est pas satisfaisante. Il serait préférable de combiner ces deux métriques plus finement pour traduire le fait que le commentaire doit être mis en perspective avec la complexité, comparer la complexité avec les commentaires sous forme d'un seuil, par exemple.\\ \\
+\textbf{L'Agrégation des métriques}\\
+L'étape d'agrégation des mesures doit elle aussi être effectuée de manière à ne pas perdre les
+informations fournies au niveau de chaque composant. Comment faire ressortir le fait qu'un élément ne réponde pas aux exigences de qualité lorsqu'on se situe au niveau le plus haut ?
+Utiliser des notes globales pour définir la qualité pose également un problème crucial pour les
+développeurs : comment retrouver les informations livrées par les données brutes à travers une seule note globale ? Comment traduire cette note en un problème concret de conception/développement ? Cet écueil empêche nombre de développeurs de s'intéresser à un modèle de qualité dans son ensemble et ils lui préfèrent encore souvent les métriques de code brutes. Pour fournir une représentation de la qualité à un niveau élevé, le modèle ISO 9126 s'appuie sur des métriques, comme décrit dans sa plus haut\cite{iso2003}. Cependant, cette description ne donne aucune indication précise quant à la manière d'agréger les différentes métriques citées. Une moyenne simple ou pondérée reste souvent le moyen le plus utilisé pour y parvenir. Et pourtant, nous allons voir que les moyennes ne donnent pas entière satisfaction puisqu'elles perdent de l'information comme cela est souligné par Bieman et d'autres chercheurs \cite{bieman1996metric,serebrenik2010theil,vasilescu2010comparative}\\ \\
+\textbf{Moyenne simple}\\
+La méthode employée pour calculer une note globale sans perdre les informations fournies par
+les notes individuelles des composants du projet cristallise souvent les points faibles des modèles 
+\begin{table}[!hbtp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} Methodes & SLOC \textbf{Classe 1} &  SLOC \textbf{Classe 2} \\ 
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} A & 24 & 71 \\ 
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} B & 25 & 9 \\ 
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} C & 27 & 10 \\ 
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} D & 24 & 8 \\ 
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} \textbf{Moyenne} & 25.0 & 24.5 \\ 
+			\hline 
+		\end{tabular} 
+	\end{center}
+	\caption{Les moyennes simples de la métrique SLOC pour quatre méthodes dans deux classes différentes}
+	\label{tablesloc}
+\end{table}
+
+qualité. Calculer une simple moyenne n'est pas assez précis puisque cela ne permet pas de déterminer
+l'écart type d'une population comme illustré ensuite. Elle dilue les valeurs extrêmes au milieu des
+valeurs moyennes.
+La Table \ref{tablesloc} présente le nombre de lignes de code, soit la métrique SLOC, pour quatre méthodes dans deux classes différentes. Dans cet exemple, la moyenne du nombre de lignes de code est de
+25.0 pour la classe 1 et de 24.5 pour la classe 2. En partant du fait qu'il est préférable pour une
+classe de posséder des méthodes n'ayant pas un nombre trop élevé de lignes de code, ces résultats
+pourraient amener à croire que la seconde classe est de meilleure qualité que la première (puisque
+la moyenne est moins élevée) ou du moins que ces deux classes sont sensiblement identiques. Mais
+cette moyenne masque le fait que la seconde classe possède une méthode A qui est très clairement
+en dehors des normes. C'est pourquoi, bien que la note moyenne soit meilleure, le détail des notes
+montre que cette seconde classe est pourtant la moins bonne, du moins par rapport aux mesures de
+la métrique SLOC.
+La moyenne, parce qu'elle lisse les résultats ne représente pas toujours la réalité \cite{vasilescu2010comparative}.
+Pour être utile, un modèle de qualité doit être un modèle d'évaluation mais également un guide
+pour augmenter la qualité. Un développeur doit pouvoir connaître les composants à améliorer et un
+manager les points faibles du projet : donner une note globale qui ait du sens, mettre en avant les
+mauvais composants et les faiblesses d'une application. Dans l'exemple précédent, un indicateur de
+qualité approprié devrait pointer du doigt le mauvais résultat de la méthode A en fournissant une
+note globale plus basse. Une simple moyenne ne pointe pas les mauvais composants et même pire :
+elle les masque. En effet, si l'on prend pour exemple la règle qualitative suivante :''les méthodes
+de plus de 300 lignes de code sont inacceptable'', une moyenne simple peut facilement échouer à
+traduire cette règle pour les raisons susdites.
+Pour remédier à cet inconvénient, il est souvent décidé d'utiliser une moyenne pondérée. Cependant, cette méthode a aussi ses défauts comme nous en discutons dans la suite.\\ \\
+\textbf{Moyenne pondérée}\\
+L'idée principale derrière l'utilisation d'une moyenne pondérée est de mettre en avant les mauvais composants et de détecter s'il existe des composants critiques. Intuitivement, il s'agit d'utiliser
+l'agrégation de métriques comme une alarme : donner une mauvaise note globale lorsqu'un composant est mauvais. Le poids est appliqué aux notes individuelles et représente l'influence de la note comparée aux autres.
+
+\begin{table}[!hbtp]
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|}
+			\hline 
+			\rule[-1ex]{0pt}{2.5ex} \textbf{Note} &$ \leq 35$ & $\left] 35; 70\right]$ & $\left] 35; 70\right]$  & $> 160$ \\ 
+			
+			\rule[-1ex]{0pt}{2.5ex} \textbf{Poids} & 1 & 3 & 9 & 27 \\ 
+			\hline 
+			
+		\end{tabular} 
+		\caption{Exemple de poids appliqués sur SLOC}
+		\label{poidsloc}
+	\end{center}
+\end{table}
+
+
+\begin{table*}[!hbtp]
+	\begin{minipage}{0.5 \linewidth}
+		\begin{center}
+			\begin{tabular}{|cccc|}
+				\hline 
+				Méthodes   & SLOC & Poids & SLOC\\ 
+				& & & pondérée  \\ 
+				\hline 
+				A & 30 & 1 & 30 \\ 
+				
+				B & 50 & 3 & 150 \\ 
+				
+				C & 70 & 9 & 630 \\ 
+				
+				D & 300 & 27 & 8100 \\ 
+				\hline 
+				Moyenne & & &\\
+				Simple/Pondéré & 112.5 &  & 222.75 \\ 
+				\hline 
+			\end{tabular}
+		\end{center}
+	\end{minipage}\hfill
+	\begin{minipage}{0.5 \linewidth}
+		\begin{center}
+			\begin{tabular}{|cccc|}
+				\hline 
+				Méthodes   & SLOC & Poids & SLOC\\ 
+				& & & pondérée  \\ 
+				\hline
+				A & 25 & 1 & 25 \\ 
+				
+				B & 30 & 1 & 30 \\ 
+				
+				C & 50 & 3 & 150 \\ 
+				
+				D & 300 & 27 & 8100 \\ 
+				\hline
+				Moyenne & & &\\
+				Simple/Pondéré & 101.25 &  & 259.53 \\ 
+				\hline 	
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+	\caption{Les moyennes de deux versions différentes d'un même projet}
+	\label{metrique}
+\end{table*}
+
+Considérons l'exemple suivant : la Table \ref{poidsloc} décrit les poids donnés pour la métrique SLOC
+dans la première version de Squale. Ces poids ont été choisis pour traduire l'intention sous-jacente
+de pondérer de plus en plus sévèrement les mauvais résultats. Les poids sont multipliés par 3 pour chaque seuil et les valeurs des seuils de la métrique
+SLOC sont déterminées par les développeurs en fonction de leur savoir-faire :
+\begin{itemize}
+	\item  une méthode de moins de 35 lignes est idéale ;
+	\item une méthode entre 35 et 70 lignes est acceptable ;
+	\item une méthode entre 70 et 160 lignes est passable ;
+	\item une méthode de plus de 160 lignes est inacceptable.\\
+\end{itemize}
+Les mesures obtenues pour cette métrique sont donc pondérées de plus en plus fortement, avec une
+valeur extrême de 27, pour augmenter leur influence lors du calcul de la moyenne.
+La Table \ref{metrique} représente un exemple de résultats obtenus pour la métrique SLOC selon ce principe pour deux versions d'un même projet. Par exemple, les poids appliqués pour la méthode C sont
+différents du fait de la note différente obtenue. Les méthodes B et C illustrent le paradoxe créé
+par l'emploi de cette technique. En effet, alors que la valeur de la métrique SLOC diminue et donc
+que la qualité augmente, les poids appliqués aux valeurs produisent un effet totalement inverse
+sur le calcul de la note globale : celle-ci diminue ! Dans cet exemple, la moyenne pondérée passe
+de (30 + 150 + 630 + 8100) =/ 40 = 222:75 à (25 + 30 + 150 + 8100)=/32 = 259:53 pour la seconde
+version car la somme des poids passe de 40 à 32. Le résultat augmente (donc l'évaluation de la
+qualité diminue) alors même que la qualité du code est globalement améliorée. Cet exemple montre que l'utilisation d'une moyenne pondérée n'est pas la méthode adéquate et peut même s'avérer totalement inappropriée. Un modèle de qualité doit refléter tous les changements le plus finement possible et avec fiabilité.\\
+
+\textbf{Conclusion}\\
+Dans cette partie nous venons  définir ce qu'est la qualité plus particulièrement la qualité logicielle , ensuite nous avons donne les différents modèles de la qualité existant dans la littérature et leurs différentes limites et enfin évaluation de la qualité logicielle a partir des métriques. Dans ce qui suis nous définirons le Machine Learning , donnerons l'historique de ce dernier et présenterons les différents types de Machine Learning et les différents algorithmes de Machine Leaning existants et enfin son apport pour l'évaluation de la qualité logicielle\\
+\section{Définition et Historique du Machine Learning}
+\subsection{Définition}
+Le Machine Learning est une discipline de l'Intelligence Artificielle qui offre aux ordinateurs la possibilité d'apprendre à partir d'un ensemble d'observations que l'on appelle ensemble d'apprentissage. Chaque observation, comme par exemple \emph{« j'ai mangé tels et tels aliments à tel moment de la journée pendant telle période ce qui a causé telle maladie » } est décrite au moyen de deux types de variables :
+\begin{itemize}
+	\item Les premières sont appelées les variables prédictives (ou attributs ou caractéristiques), dans notre exemple mon âge, mon dossier médical, mes antécédents médicaux. Ce sont les variables à partir desquelles on espère pouvoir faire des prédictions. Les \emph{n} variables prédictives associées à une	observation seront notées comme un vecteur $ x= (x_{1},...,x_{n})$ à \emph{n} composantes. Un ensemble de \emph{M} observations sera constitué de \emph{M} tels vecteurs $x^{(1)},...,x^{(M)}$.
+	\item Une variable cible dont on souhaite prédire la valeur pour des événements non encore observés. Dans notre exemple, il s'agirait de la maladie contractée. On notera y cette variable cible.\\
+	\begin{center}
+		\begin{figure}
+			\centering
+			\includegraphics[scale=0.7]{ml.jpg}\\
+			\caption{le processus typique du Machine Learning}
+		\end{figure}
+	\end{center}
+	En résume, la valeur de la variable y dépend de :\\
+	\item Une fonction F(x) déterminée par les variables prédictives.
+	\item Un bruit $\epsilon $(x) qui est le résultat d'un nombre de paramètres dont on ne peut pas tenir compte.\\
+	
+	Aussi bien F que $\epsilon $ ne seront jamais connues mais l'objectif d'un modèle de Machine Learning est d'obtenir la meilleure
+	approximation possible de F à partir des observations disponibles. Cette approximation sera notée \emph{f} , on
+	l'appelle la fonction de prédiction.
+	\begin{center}
+		\includegraphics[scale=0.7]{figure2}\\
+		Figure 2 - un modèle de Machine Learning qui essaye d'obtenir la meilleure approximation possible de F\\ 
+	\end{center}
+	
+	Voici quelques exemples d'utilisation du Machine Learning :
+	\item  Vision par ordinateur\cite{bradski2005learning}
+	\item  Détection de fraude \cite{chan1998toward}
+	\item  Classification (image, texte, video, son, ...)
+	\item  Les publicités ciblées \cite{huang2008web}
+	\item Diagnostic médical \cite{kononenko2001machine}
+\end{itemize} 
+
+\subsection{Historique du Machine Learning}
+
+	\begin{center}
+		\begin{longtable}{|p{2cm}|p{3cm}|p{11cm}|}
+		 	\hline
+			Année & Contributeur & Contribution\\ \hline 
+			\endfirsthead
+			\hline
+			Année & Contributeur & Contribution\\ \hline
+			\endhead
+			\hline
+			\endfoot
+			\endlastfoot	
+			\center{1943} & \center{Warren McCulloch et Walter Pitts} & Introduction du McCulloch?Pitts (MCP) modèle
+			considérer comme L?ancêtre des réseaux de neurones artificiels \\
+			
+			\hline 
+			\center{1950} & \center{Alan Turing} & Alan Turing crée le «test de Turing » pour déterminer si un ordinateur dispose d'une véritable intelligence. Pour réussir le test, un ordinateur doit être capable de tromper un humain en lui faisant croire qu'il est aussi humain. \\ 
+			
+			\hline
+			\center{1952}&\center{Arthur Samuel}& Arthur Samuel a écrit le premier programme d'apprentissage informatique. Le programme était le jeu de dames, et l'ordinateur d'\emph{IBM} s'améliorait au fur et à mesure qu'il jouait, en étudiant quelles techniques constituaient des stratégies gagnantes et en intégrant ces stratégies à son programme.\\
+			
+			\hline
+			\center{1957}&\center{Frank Rosenblatt}&Frank Rosenblatt conçoit le premier réseau de neurones pour ordinateurs (le perceptron), qui simule les processus de pensée du cerveau humain. L'objectif principal de ceci était la reconnaissance des formes et des motifs. \\
+			
+			\hline
+			\center{1967}&\center{*}&L'algorithme du \textbf{« plus proche voisin »} est écrit, permettant aux ordinateurs de commencer à utiliser une reconnaissance de motif très basique. Cela pourrait être utilisé pour tracer un itinéraire pour les vendeurs qui voyagent, en partant d'une ville au hasard, mais en s'assurant qu'ils visitent toutes les villes au cours d'une courte visite.\\
+			
+			\hline
+			\center{1979}&\center{Les étudiants de l'Université de Stanford}&Inventent le \emph{« Stanford Cart »} , qui peut franchir seul les obstacles dans une pièce. \\
+			
+			\hline
+			\center{1981} &\center{Gerald Dejong}& Introduit le concept d'apprentissage basé sur l'explication (EBL), dans lequel un ordinateur analyse les données de formation et crée une règle générale qu'il peut suivre en éliminant les données sans importance.\\
+			
+			\hline
+			\center{1985} &\center{Terry Sejnowski }& Terry Sejnowski Invente NetTalk qui apprend à prononcer des mots comme un bébé.\\
+			\hline
+			\center{Années 1990}&\center{ *}&Le travail sur l'apprentissage automatique passe d'une approche basée sur la connaissance à une approche basée sur les données. Les scientifiques commencent à créer des programmes informatiques pour analyser de grandes quantités de données et tirer des conclusions - ou « apprendre » - à partir des résultats.\\
+			\hline
+			\center{1997}&\center{IBM}& Deep Blue d'IBM bat le champion du monde aux échecs.\\
+			
+		
+			\center{2006}& \center{Geoffrey Hinton}&Invente le terme \emph{« apprentissage en profondeur »} pour expliquer les nouveaux algorithmes permettant aux ordinateurs de « voir » et de distinguer les objets et le texte dans les images et les vidéos. \\
+			\hline
+			
+			\center{2010}&\center {Microsoft}& Le Microsoft  Kinect peut suivre 20 entités humaines à une vitesse de 30 fois par seconde, permettant aux utilisateurs d?interagir avec l?ordinateur par le biais de mouvements et de gestes.\\
+			
+			\hline
+			\center{2011}&\center{IBM}	&Le Watson d'IBM bat ses concurrents humains chez Jeopardy. \\
+			
+			\hline
+			\center{2011}&\center{GOOGLE}&Le cerveau est développé et son réseau de neurones profonds peut apprendre à découvrir et à classer des objets de la même manière qu'un chat. \\
+			
+			\hline
+			\center{2012}&\center{GOOGLE}&Un laboratoire de Google développe un algorithme d'apprentissage automatique capable de parcourir des vidéos YouTube de manière autonome pour identifier celles contenant des chats. \\
+			
+			\hline
+			\center{2014}&\center{FACEBOOK}&  Facebook  développe DeepFace, un algorithme logiciel capable de reconnaître ou de vérifier des personnes sur des photos au même niveau que l?être humain.\\
+			
+			\hline
+			\center{2015}&\center{AMAZON}& Amazon lance sa propre plate-forme d'apprentissage automatique.\\
+			
+			\hline
+			\center{2015}&\center{Microsoft}& Microsoft crée la boîte à outils Distributed Machine Learning, qui permet de distribuer efficacement les problèmes d'apprentissage machine sur plusieurs ordinateurs.\\
+			
+			\hline
+			\center{2015}&\center{*}& Plus de 3 000 chercheurs en intelligence artificielle et en robotique, appuyés par Stephen Hawking, Elon Musk et Steve Wozniak (parmi beaucoup d'autres), signent une lettre ouverte mettant en garde contre le danger des armes autonomes sélectionnant et engageant des cibles sans intervention humaine.\\
+			
+			\hline
+			\center{2016}&\center{GOOGLE}&L'algorithme d'intelligence artificielle de Google bat un joueur professionnel au jeu de société chinois Go, considéré comme le jeu de société le plus complexe au monde et beaucoup plus dur que les échecs. L'algorithme AlphaGo développé par Google DeepMind a réussi à gagner cinq jeux sur cinq dans la compétition Go. \\
+			
+			\hline
+			\caption{Historique} \cite{marr2016short}
+		\end{longtable}
+		
+	\end{center}
+
+
+\subsection{Performance et sur-apprentissage}
+On peut penser que la performance d'un modèle sera en fonction des prédictions correctes faites sur
+l'ensemble d'observation utilisées pour l'apprentissage, plus elle est élevée, mieux c'est. Pourtant c'est complètement faux, ce qu'on cherche à obtenir du Machine Learning n'est pas de prédire avec exactitude les valeurs des variables cibles connues puisqu'elles ont été utilisées pour l'apprentissage mais bien de prédire celles qui n'ont pas encore été observées. Par conséquent, la qualité d'un algorithme de Machine Learning se juge sur sa capacité à faire les bonnes prédictions sur les nouvelles observations grâce aux caractéristiques apprises lors de la phase d'entraînement. Il faut donc éviter le cas où on a un modèle de Machine Learning tellement trop entraîné qu'il arrive à prédire à la perfection les données d'apprentissage mais qui n'arrive pas à généraliser sur les données de test. On l'appelle le sur-apprentissage. La cause du sur-apprentissage est que le modèle est trop complexe par rapport à la fonction F que l'on souhaite apprendre.
+\begin{center}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{fig3.png}
+		\caption{Le sur-apprentissage : le graphe montre l'évolution de l'erreur commise sur l'ensemble de test par rapport à celle commise sur l'ensemble d'apprentissage, les deux erreurs diminuent mais dès que l'on rentre dans une phase de sur-apprentissage, l'erreur d'apprentissage continue de diminuer alors que celle du test augmente.}
+	\end{figure}
+\end{center}
+
+\begin{center}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.8]{fig4.png}
+		\caption{La ligne verte représente un modèle surentraîné et la ligne noire représente un modèle régularisé. Ce dernier aura une erreur de test moins importante.}
+	\end{figure}
+\end{center}
+Pour résoudre ce problème, on divise les données disponibles en deux groupes distincts. Le premier sera l'ensemble d'apprentissage, et le deuxième sera l'ensemble de test.
+
+Pour avoir une bonne séparation des données en données d'apprentissage et données de test, on utilise la validation croisée. L'idée c'est de séparer aléatoirement les données dont on dispose en k parties séparées de même taille. Parmi ces k parties, une fera office d'ensemble de test et les autres constitueront l'ensemble d'apprentissage. Après que chaque échantillon ait été utilisé une fois comme ensemble de test. On calcule la moyenne des k erreurs moyennes pour estimer l'erreur de prédiction.\\
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.8]{fig5.jpg}
+	\caption{ La validation  croisée.}
+\end{figure}
+
+\subsection{Les différents types de machine Learning}
+\subsubsection{Apprentissage supervisé et non supervisé}
+\begin{itemize}
+	
+	\item La tache de l'apprentissage supervisé c'est :
+	soit l'ensemble d'apprentissage composé de \emph{N} exemples de pair entrée-sortie :
+	$(x^{(1)},y^{(1)}),(x^{(2)},y^{(2)}),...,(x^{(M)},y^{(M)})$
+	chaque $y^{(j)}$ a été généré par une fonction $F (x) = y$ inconnue,
+	découvrir la fonction \emph{f} qui se rapproche de \emph{F} 
+	\item L'apprentissage non supervisé ou clustering ne demande aucun étiquetage préalable des données. Le but est que le modèle réussisse à regrouper les observations disponibles en catégories par lui-même l'apprentissage semi supervisé est à mi chemin entre ces deux méthodes. On fournit au modèle quelques exemples étiquetés mais la grande partie des données ne le sont pas. On trouve des
+	cas d'application partout où l'obtention des données est facile mais leur étiquetage demande des efforts, du temps ou de l'argent comme par exemple :
+	\item En reconnaissance de parole, il ne coûte rien d'enregistrer une grande quantité de parole, mais leur étiquetage nécessite des personnes qui les écoutent.
+	\item Des milliards de pages web sont disponibles, mais pour les classer il faut les lire.
+	\subsubsection{Régression et Classification}
+	\item Un modèle de classification est un modèle de Machine Learning dont les sorties \emph{y} appartiennent à un ensemble fini de valeurs (exemple : bon, moyen, mauvais)
+	\item Un modèle de régression est un modèle de Machine Learning dont les sorties \emph{y} sont des nombres (exemple : la température de demain)
+\end{itemize}
+\section{Les différents type d'algorithme de Machine Learning}
+\subsection{Le classifieur naïf de Bayes}
+Le classifieur naïf de Bayes est un algorithme supervisé probabiliste qui suppose que l'existence d'une
+caractéristique pour une classe, est indépendante de l'existence d'autres caractéristiques, raison pour
+laquelle on utilise l'adjectif «naif» . Une personne peut être considérée comme un homme si il pèse un
+certain poids et mesure une certaine taille. Même si ces caractéristiques sont liées dans la réalité, un classifieur bayésien naïf déterminera que la personne est un homme en considérant indépendamment ces
+caractéristiques de taille et de poids.\\
+Malgré des hypothèses de base extrêmement simplistes, ce classifieur conduit à de très bons résultats
+dans beaucoup de situations réelles complexes. En 2004, un article a montré qu'il existe des raisons
+théoriques derrière cette efficacité inattendue \cite{domingos1997optimality}. Toutefois, une autre étude de 2006 montre que des
+approches plus récentes (arbres renforcés, forêts aléatoires) permettent d'obtenir de meilleurs résultats\cite{rish2001empirical}.
+\begin{center}
+	\begin{figure}[hbtp]
+		\centering
+		\includegraphics[scale=0.8]{fig8.jpg}
+		\caption{Le classifieur naïf de Bayes est basé sur le théorème de Bayes avec une indépendance (dite naïve) des variables prédictives.}
+	\end{figure}	
+\end{center}
+\begin{itemize}
+	\item  Avantages :
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		- \> L'algorithme offre de bonne performance
+	\end{tabbing} 
+	\item Inconvénients
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		- \> La prédiction devient erronée si L'Hypothèse indépendance conditionnelle est invalide
+	\end{tabbing}  
+\end{itemize}
+
+\subsection{Les k plus proches voisins}
+L'algorithme des K-Nearest Neighbors (KNN) (K plus proches voisins) est un algorithme de classification supervisé. Chaque observation de l'ensemble d'apprentissage est représentée par un point dans un
+espace à \emph{n} dimensions ou \emph{n} est le nombre de variables prédictives. Pour prédire la classe d'une observation, on cherche les \emph{k} points les plus proches de cet exemple. La classe de la variable cible, est celle qui est la plus représentée parmi les \emph{k} plus proches voisins. Il existe des variantes de l'algorithme ou on pondère les \emph{k} observations en fonction de leur distance à l'exemple dont on veut classer\cite{hechenbichler2004weighted}, les observations les plus éloignées de notre exemple seront considérées comme moins importantes.\\
+Une variante de l'algorithme est utilisée par NetFlix \cite{hong2006use} pour prédire les scores qu'un utilisateur
+attribuera à un film en fonction des scores qu'il a attribués à des films similaires
+\begin{center}
+	\begin{figure}[hbtp]
+		\centering
+		\includegraphics[scale=0.5]{fig7.png}
+		\caption{Pour $k = 3$ la classe majoritaire du point central est la classe B, mais si on change la valeur
+			du voisinage$ k = 6$ la classe majoritaire devient la classe A }
+	\end{figure}
+\end{center}
+\begin{itemize}
+	\item Avantages :
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		-\> Simple à concevoir
+	\end{tabbing}
+	\item Inconvénients
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		-\> Sensible aux bruits \\ 
+		-\> Pour un nombre de variable prédictives très grands, le calcul de la distance devient très\\coûteux.
+	\end{tabbing} 
+	
+\end{itemize}
+
+\subsection{Les arbres de décision}
+Les arbres de décision sont des modèles de Machine Learning supervisés, pouvant être utilisés pour la classification que pour la régression.\\
+Un arbre de décision représente une fonction qui prend comme entrée un vecteur d'attributs et retourne
+une décision qui est une valeur unique. Les entrées et les sorties peuvent être discrètes ou continues.\\
+Un arbre de décision prend ses décisions en exécutant une séquence de test, chaque n\oe ud interne
+de l'arbre correspond à un test de la valeur d'un attribut et les branches qui sortent du n\oe ud sont les
+valeurs possibles de l'attribut. La classe de la variable cible est alors déterminée par la feuille dans laquelle parvient l'observation à l'issue de la séquence de test.\\
+La phase d'apprentissage consiste à trouver la bonne séquence de test. Pour cela, on doit décider des
+bons attributs à garder. Un bon attribut divise les exemples en ensembles homogènes c.à .d qu'ils ne
+contiennent que des observations appartenant à la même classe, alors qu'un attribut inutile laissera les
+exemples avec presque la même proportion de valeur pour la variable cible .\\
+Ce dont on a besoin c'est d'une mesure formelle de "bon" et "inutile". Pour cela, il existe des métriques
+standards homogénéisées avec lesquels on peut mesurer l'homogénéité d'un ensemble. Les plus connus
+sont l'indice de diversité de Gini et l'entropie \cite{shannon1948w}.\\
+En général l'entropie d'une variable aléatoire V avec des valeurs vk chacune avec une probabilité P(vk)
+est définie comme :
+\begin{equation}
+Entropie : H\left( V \right)= -\sum_{K} P \left( v_{k} \right) \log_{2} P\left( v_{k}\right) 
+\end{equation}
+\begin{itemize}
+	\item Avantages :
+	
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		-\>  C'est un modèle boîte blanche, simple à comprendre et à interpréter. \\ 
+		-\> Peu de préparation des données. \\ 
+		-\> Les variables prédictives en entrée peuvent être aussi bien qualitatives que quantitatives.\\
+		-\>Performant sur de grands jeux de données
+	\end{tabbing} 
+	
+\end{itemize}
+\begin{center}
+	\begin{figure}[hbtp]
+		\centering
+		\includegraphics[scale=1]{fig10.png}
+		\caption{ L'ensemble d'apprentissage contient 12 observations décrites par 10 variables prédictives et
+			une variable cible. \cite{russell2016artificial}
+		}
+	\end{figure}
+	
+\end{center}
+\begin{center}
+	\begin{figure}[hbtp]
+		\centering
+		\includegraphics[scale=1]{fig11.png}
+		\caption{Les exemples positifs sont représentés par des cases claires alors que les exemples négatifs
+			sont représentés par des cases sombres. (a) montre que la division par l'attribut Type n'aide pas à avoir
+			une distinction entre les positifs et les négatifs exemples. (b) montre qu'avec la division par l'attribut
+			Patrons on obtient une bonne séparation entre les deux classes. Après division par Patrons, Hungry est
+			un bon second choix. \cite{russell2016artificial}
+		}
+	\end{figure}
+	
+\end{center}
+\begin{center}
+	\begin{figure}[hbtp]
+		\centering
+		\includegraphics[scale=1]{fig12.png}
+		\caption{ L'arbre de décision déduit à partir des 12 exemples d'apprentissage.\cite{russell2016artificial}}
+	\end{figure}
+	
+\end{center}
+\begin{itemize}
+	\item Inconvénients
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		-  \> L'existence d'un risque de sur-apprentissage si l'arbre devient très complexe.\\
+		On utilise des procédures d'élagage pour contourner ce problème.
+	\end{tabbing} 
+\end{itemize}
+
+\subsection{L'Algorithme AdaBoost}
+
+
+
+Le boosting est une technique d'ensemble qui tente de créer un classificateur
+fort à partir d'un certain nombre de classificateurs faibles. Cela se fait en
+construisant un modèle à partir des données d'apprentissage, puis en créant
+un deuxième modèle qui tente de corriger les erreurs du premier modèle. Les
+modèles sont ajoutés jusqu'à ce que l'ensemble d'apprentissage soit
+parfaitement prévu ou jusqu'à ce qu'un nombre maximal de modèles soit
+ajouté.\\
+AdaBoost a été le premier algorithme de boosting réellement réussi
+développé pour la classification binaire. C'est le meilleur point de départ pour
+comprendre stimuler. Les méthodes de boosting modernes reposent sur
+AdaBoost, notamment les machines à boosting de gradient stochastique.\\
+
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.5]{adaboost.jpg}
+	\caption{Algorithme AdaBoost}
+\end{figure}
+AdaBoost est utilisé avec des arbres de décision courts. Une fois le premier arbre
+créé, les performances de l'arbre sur chaque instance d'entraînement servent à
+pondérer le degré d'attention accordé à l'arbre suivant créé qui doit prêter
+attention à chaque instance d'entraînement. Les données d'entraînement qui sont
+difficiles à prédire ont plus de poids, alors que les cas faciles à prévoir ont moins
+de poids. Les modèles sont créés séquentiellement l'un après l'autre, chacun
+mettant à jour les pondérations sur les instances d'apprentissage qui affectent
+l'apprentissage effectué par l'arborescence suivante de la séquence. Une fois
+toutes les arborescences construites, des prédictions sont établies pour les
+nouvelles données et la performance de chaque arborescence est pondérée par
+son degré de précision par rapport aux données d'apprentissage.\\
+étant donné que l'algorithme accorde beaucoup d'attention à la correction des erreurs, il est important que vous disposiez de données claires, sans données
+aberrantes.\\
+
+\subsection{Méthode fondée sur l'arbre, J48}
+L'apprentissage par l'arbre est basé sur des arbres de décision issus d'un ensemble de formations
+qui sont labellisées. La prédiction de la décision ou de l'étiquette de classe (c'est-à-dire en termes
+d'apprentissage machine) peut être prise de la racine à un n?ud de feuille. Elle peut traiter des données multidimensionnelles ainsi que d'apprendre à partir de ces données [52].\\
+Cet apprentissage est basé sur des arbres de décision issus des données de formation de la classe.
+Il ressemble à un organigramme comme une structure arborescente. Dans la structure
+arborescente, les n?uds internes indiquent le test des attributs. Les branches sont les résultats
+des tests et les feuilles sont les étiquettes de classe. La racine représente le n?ud le plus élevé
+de l'arbre. Dans la littérature, il existe de nombreux algorithmes d'arbre de décision énumérés
+ici.\\
+1. ID3 (c'est-à-dire le dichotomiseur itératif 3 (ID3), c'est-à-dire qui se trouve dans [76])\\
+2. C4.5\\
+3. CART (c'est-à-dire arbre de classification et de régression également appelé analyse
+discriminante optimale hiérarchique)\\
+4. CHAID (c'est-à-dire un détecteur automatique d'interaction CHi-carré dont les sorties sont très
+visuelles)\\
+5. MARS (c'est-à-dire Multivariate Adaptive Regression Splines, qui est une technique de
+régression non paramétrique)\\
+La méthode arborescente, J48 (c'est-à-dire la mise en ?uvre de C4.5) est largement utilisée dans
+différentes applications de domaine (par exemple, le diagnostic d'un problème, l'astronomie,
+l'intelligence artificielle, l'analyse financière bancaire, la biologie moléculaire, et autres).
+). Un arbre de décision est également utilisé pour produire un classificateur applicable et un
+apprentissage pour la prédiction du problème assigné [77] ; ce sont des sujets de recherche
+importants ces derniers jours. En même temps, il montre des performances significatives avec
+des analyses à variables multiples. Il est capable de sélectionner des caractéristiques complexes
+avec des caractéristiques liées à des règles [77]. En plus de divers points de données, il
+fonctionne avec des variables de données bruyantes et incomplètes (c'est-à-dire des valeurs
+manquantes). Il est simple et rapide d'apprentissage et de classification à partir des données de
+formation avec une bonne précision [78].\\
+Malgré ces facilités, l'information qui sort n'est pas exacte et peut être influencée par d'autres
+domaines. Dans la plupart des cas, il faut une variable cible pour faire une prédiction dans les
+exemples de formation [52]. Elle est trop sensible sur des données irrévérencieuses et bruyantes
+qui contiennent dans la plupart des cas pratiques. Avec l'exploitation des exemplesd'entraînement, le bruit ou les valeurs aberrantes peuvent se reproduire lors de la construction
+d'arbres, ce qui peut constituer une autre lacune des arbres de décision [78].\\
+
+\subsection{Random Forest}
+Random Forest est l'un des algorithmes d'apprentissage automatique les plus
+populaires et les plus puissants. Il s'agit d'un type d'algorithme
+d'apprentissage automatique appelé «Bootstrap Aggregation» ou «bagging».\\
+Le bootstrap est une méthode statistique puissante permettant d'estimer une
+quantité à partir d'un échantillon de données. Comme un moyen. Vous prenez
+beaucoup d'échantillons de vos données, calculez la moyenne, puis faites la
+moyenne de toutes vos valeurs moyennes pour vous donner une meilleure
+estimation de la vraie valeur moyenne.\\
+Dans la mise en sac, la même approche est utilisée, mais plutôt pour estimer
+des modèles statistiques entiers, le plus souvent des arbres de
+décision. Plusieurs échantillons de vos données d'entraînement sont prélevés,
+puis des modèles sont construits pour chaque échantillon de données. Lorsque
+vous devez effectuer une prévision pour les nouvelles données, chaque
+modèle en fait une prédiction et la moyenne des prédictions est calculée afin
+de fournir une meilleure estimation de la valeur de sortie réelle.\\
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.5]{randomforest.jpg}
+	\caption{Algorithme de Random Forest}
+\end{figure}
+
+Random forest est un ''tweak'' sur cette approche où les arbres de décision
+sont créés de telle sorte que plutôt que de sélectionner les points de partage
+optimaux, les séparations sous-optimales sont effectuées en introduisant
+aléatoire.\\
+Les modèles créés pour chaque échantillon de données sont donc plus
+différents qu'ils ne le seraient autrement, mais restent précis de manière
+unique et différente. En combinant leurs prévisions, on obtient une meilleure
+estimation de la véritable valeur de sortie sous-jacente.\\
+Si vous obtenez de bons résultats avec un algorithme à variance élevée
+(comme les arbres de décision), vous pouvez souvent obtenir de meilleurs
+résultats en ensachant cet algorithme.
+
+\begin{itemize}
+	
+	\item Avantages :
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		-\> Très précis \\
+		-\> bon point de départ pour résoudre un Problème\\
+		-\> Flexible et peut s'adapter à une variété de données différentes\\
+		-\> Rapide à exécuter\\
+		-\> Facile à utiliser\\
+		-\> Utile pour les problèmes de régression et de classification\\
+		-\> Peut modéliser les valeurs manquantes\\
+		-\> Haute performance\\
+	\end{tabbing}
+	\item Inconvénients :
+	\begin{tabbing}
+		\hspace{0.5cm}\=\kill
+		-\> Lent à l'entraînement \\ 
+		-\> Sur-adapter \\
+		-\> Ne convient pas aux petits échantillons \\
+		-\> Petit changement dans les données d'entraînement => changement de modèle\\
+		-\> Parfois trop simple pour des problèmes très complexes\\
+	\end{tabbing}
+\end{itemize}
+\subsection*{Conclusion}
+Le Machine Learning est un sujet vaste en évolution permanente. Les algorithmes qu'il met en ?uvre ont des sources
+d'inspiration variées qui vont de la théorie des probabilités aux intuitions géométriques en passant par
+des approches heuristiques.
+\section{Prédiction de la qualité du logiciel , travaux menés et méthodes employées}
+Les données de mesure du logiciel sont généralement utilisées pour la compréhension
+du logiciel. Mais dans plusieurs situations, on a besoin de prédire et d'évaluer la qualité d'un logiciel non encore en fonctionnement. Ceci est d'autant plus crucial quand
+le logiciel concerne un domaine d'application critique tel que l'industrie aéronautique.
+Pour ce domaine de l'industrie on a besoin de logiciels de haute fiabilité. En général, le
+développement de ce type de logiciels est tributaire du temps et du coût. Néanmoins,
+il faut s'assurer de la fiabilité désirée le plus tôt possible et certainement avant la mise
+en production. Paradoxalement, la fiabilité d'un logiciel est définie à partir de sa performance opérationnelle qui ne peut être mesurée qu'après une période de fonctionnement
+du logiciel. Ainsi, un recours à la prédiction s'impose pour évaluer la fiabilité du logiciel
+en cours de développement. Dans ce cas, la fiabilité est prédite à partir des indicateurs
+qui représentent notre compréhension du logiciel et qui sont disponibles dès les premières
+étapes du développement. De même on peut utiliser la prédiction lors de l'activité de
+maintenance et d'évolution du logiciel.\\
+La prédiction trouve d'autres applications dans d'autres aspects de la qualité, tels que le
+coût, l'effort et la durée de développement d'un logiciel. Dans la littérature, différentes
+motivations justifient les efforts investis dans la prédiction.\cite{fenton1999critique}
+et Khoshgoftaar \cite{khoshgoftaar1996early;khoshgoftaar1999assessing} croient que la prédiction permet de ménager l'effort et d'épargner temps et argent car la correction retardée des fautes (après déploiement du logiciel) est une tâche très souvent coûteuse. Par conséquent, l'identification des modules susceptibles d'avoir un nombre élevé de défauts
+durant le développement permet d'économiser l'effort du développement et de la maintenance, tout en se concentrant sur le perfectionnement de la qualité de ces modules à
+haut risque.
+L'importance de la prédiction a attiré l'attention de plusieurs chercheurs qui ont essayé de proposer un formalisme définissant d'une manière rigoureuse les concepts de la
+prédiction.\\
+On trouve dans la littérature plusieurs travaux qui présentent des résultats et des expé-
+riences de prédiction de variables, associées à un facteur donné de la qualité du logiciel.
+Les facteurs qui ont attiré l'intérêt de nombreux groupes de recherches sont l'effort et la
+fiabilité.\\
+Le gestionnaire et le chef du projet ont de nombreuses motivations pour prédire le coût
+d'un projet ainsi que son effort et sa durée, dès les premières étapes du cycle de vie
+d'un logiciel. Ils veulent planifier leurs tâches et allouer des ressources dans le but de
+diriger la gestion vers l'optimisation du coût. Par conséquent, plusieurs modèles d'estimation du coût et de l'effort ont été proposés comme COCOMO de Boehm \cite{barry1981software,clark1998calibrating}.\\
+La construction de modèles prédictifs de la qualité du logiciel est une tâche complexe qui
+peut impliquer plusieurs techniques dans le but de produire des modèles ayant une bonne
+prédiction. Ces techniques peuvent être basées sur l'opinion d'experts, sur l'analogie,
+sur la décomposition, sur les statistiques ou sur des méthodes d'apprentissage. Nous
+nous intéressons, dans ce présent travail, aux deux dernières familles de techniques,
+vu leur utilisation répandue. En effet, les techniques de construction sont empruntées
+généralement au domaine de la statistique ou au domaine de l'apprentissage.
+Les techniques statistiques essayent, dans l'ensemble, de trouver une formule mathématique explicite qui exprime la relation entre les variables d'entrée d'un modèle et ses
+variables de sortie. Les modèles qui en résultent sont basés généralement sur des équations de régression. Ces techniques sont très utilisées dans la prédiction en général et
+dans celle visant des facteurs économiques et financiers en particulier. Ce type de prédiction aide à comprendre le marché et par conséquent à prendre des décisions de type A
+quel moment dois-je me retirer du marché. Cette tendance a influencé la prédiction de la
+qualité du logiciel. En effet, les premiers travaux de prédiction ont concerné les facteurs
+économiques du logiciel telle que l'estimation du coût. Parmi ce type de techniques, on trouve la régression linéaire, avec ses variétés.\\
+\subsection{Quelques travaux importants dans le domaine de la prédiction}
+\subsection{QUANTIFICATION DES PARAMéTRES DE QUALITé}
+Actuellement, la quantification des paramètres affectant la qualité des
+logiciels  est un domaine important de la recherche en génie
+logiciel (SWE). Différents paramètres sont quantifiés dans
+diverses études en raison de leurs effets sur la qualité des
+logiciels. Les modèles de qualité des logiciels peuvent être
+classés en deux catégories : les modèles fixes et les modèles
+"définissez votre propre modèle" [8].
+\subsection*{L'approche du modèle fixe}
+Ce type de modèles spécifie un ensemble particulier des caractéristiques de qualités
+où l'ensemble des attributs identifiés par le client est un sous-ensemble dans le modèle prédéfini. Afin de mesurer et de contrôler un attribut de qualité particulier, il est nécessaire d'utiliser les sous-caractéristiques, les mesures et les relations associées avec le modèle fixe.\\
+Le modèle de Boehm [4] a été défini pour fournir un
+ensemble de "caractéristiques bien définies et bien
+différenciées de la qualité des logiciels". Ce modèle est
+considéré comme un modèle hiérarchique, dans lequel les
+différents critères de qualité du modèle sont subdivisés au fur
+et à mesure que la hiérarchie du modèle s'étend. Deux niveaux
+de critères de qualité sont identifiés, de sorte que le niveau
+intermédiaire est encore divisé en caractéristiques mesurables.
+Le modèle McCall [5] était destiné aux développeurs de
+systèmes et devait être utilisé pendant le processus de
+développement. Le modèle identifie trois domaines de travail
+du logiciel : le fonctionnement du produit, la révision du
+produit et la transition du produit. Il reflète les priorités des
+développeurs ainsi que les points de vue des utilisateurs.
+Dromey [7] a proposé un modèle pour la qualité des produits logiciels.
+Ce modèle établit le lien entre les caractéristiques du produit et
+des attributs de qualité moins tangibles. En d'autres termes, le
+modèle illustré fournit un processus explicite pour intégrer des
+propriétés porteuses de qualité dans les logiciels. à leur tour,
+ces propriétés impliquent des attributs de qualité spécifiques.
+En outre, le modèle peut aider à mener une recherche
+systématique des défauts de qualité dans les logiciels.\\
+Lamouchi et ses collaborateurs [9] ont quantifié les
+facteurs de qualité des logiciels par un modèle hiérarchique.
+Les facteurs sont subdivisés en critères et sous-critères à
+différents niveaux. Le dernier niveau a quantifié différentes
+mesures logicielles affectant les différents facteurs. Srivastava
+et ses collaborateurs [10] ont quantifié les paramètres de la
+qualité du logiciel selon différentes perspectives : celle du
+développeur, du gestionnaire de projet et de l'utilisateur. Ils
+ont pris en compte la moyenne pondérée des différents
+facteurs pour obtenir la qualité réelle du logiciel.
+Kanellopoulos et al (11) ont évalué la qualité du code source
+et le comportement statique d'un système logiciel, sur la base
+de la norme ISO/IEC-9126 (6), à l'aide du modèle AHP
+(Analytical Hierarchy Process)\\
+\subsection*{L'approche "Définissez votre propre modèle"}
+Cette approche contraste avec l'approche des modèles fixes
+en ce sens qu'aucun attribut de qualité spécifique n'est défini.
+En revanche, un consensus sur les attributs de qualité
+pertinents est reconnu pour un système spécifique en
+coopération avec l'utilisateur. Ensuite, les attributs définis sont
+décomposés en caractéristiques de qualité qui peuvent être
+mesurées et leurs paramètres. La décomposition peut être
+guidée par un modèle de qualité existant. Les relations entre
+les attributs et les caractéristiques de qualité pourraient alors
+être définies de deux manières. Premièrement, par un modèle
+directement défini par les acteurs du projet. Deuxièmement,
+par un modèle défini indirectement qui peut être généré
+automatiquement.\\
+Les modèles directement définis sont considérés comme
+des graphiques de dépendance. Des exemples de ces
+approches ont été présentés dans [12, 13]. Samoladas et al.
+[12] ont présenté un modèle de qualité hiérarchique pour
+évaluer le code source ainsi que les processus
+communautaires. Lazi\'c et al. [13] ont proposé un modèle qui
+peut être utilisé pour suivre les décisions de conception ainsi
+que les alternatives potentielles. Cela peut aider à réduire les coûts lors de l'évaluation des différentes alternatives de
+conception et lors du passage d'une alternative à l'autre.\\
+Les modèles définis indirectement - proviennent à l'origine
+de deux domaines principaux, à savoir l'intelligence artificielle
+et les mathématiques. Le modèle de qualité pourrait être
+influencé par la technique choisie et son paramètres. Néanmoins, la technique utilisée n'a pas d'impact
+direct sur le modèle de qualité des résultats. En effet, les
+relations de qualité représentées dans ces modèles sont
+compliquées, ce qui affecte négativement la compréhension
+des parties prenantes du projet.
+
+\subsection{PRéVISION DE LA QUALITé DES LOGICIELS BASéE SUR L'APPRENTISSAGE MACHINE}
+Les techniques de ML ont été utilisées dans de nombreux
+domaines de problèmes différents car ce domaine se
+concentre sur la construction d'algorithmes qui ont la capacité
+d'améliorer leurs performances automatiquement par
+l'expérience. L'application des techniques de ML à l'ingénierie logicielle a
+donné des résultats prometteurs et encourageants [14].\\
+La machine à vecteur de soutien (SVM) a été appliquée
+avec succès dans de nombreux modèles de prévision de
+l'ingénierie logicielle. Le SVM a été utilisé pour la prédiction de l'effort de
+maintenance [15]. De plus, différentes études ont utilisé le
+SVM pour la prédiction des modules de prédictivité des défauts du logiciel [16-18].\\
+Le réseau bayésien (BN) a été utilisé dans diverses études
+dans le domaine de l'ingénierie logicielle  en raison de sa capacité à intégrer à
+la fois des données empiriques et des avis d'experts. Certaines
+études ont porté sur la prévision de la qualité des logiciels
+[19] et sur les efforts de développement [20]. Wagner
+[21] a proposé un cadre pour la création d'un BN pour la
+prévision de la qualité des logiciels en utilisant les modèles de
+qualité basés sur les activités. De même, Radli\`nski [22] a
+proposé un modèle BN pour la prédiction intégrée de la
+qualité des logiciels. L'auteur a ensuite amélioré le cadre
+proposé en utilisant à nouveau le BN [23]. D'autres études ont
+utilisé le BN pour évaluer et prédire la maintenabilité du
+logiciel [24].\\
+Kanmani et al (25) ont introduit l'utilisation des réseaux
+neuronaux (NN) comme outil de prédiction des défauts des
+logiciels. Yang et al.
+[26] a également proposé un modèle de prévision de la qualité
+des logiciels basé sur un NN flou pour identifier les erreurs de
+conception des produits logiciels dans les premières étapes du
+cycle de vie d'un logiciel. De plus, les NN ont été utilisés
+pour prédire à un stade précoce des attributs de qualité
+spécifiques, par exemple la fiabilité [27] et l'effort de
+maintenance [28].\\
+Comme la relation entre les attributs de qualité internes et
+externes est entourée d'impression et d'incertitude, différentes
+études dans la littérature ont tenté d'utiliser la capacité de la
+logique floue (FL) pour estimer la qualité du logiciel. Mittal
+et ses collaborateurs [29] ont proposé une approche basée sur
+la FL pour quantifier la qualité des logiciels, où les logiciels
+examinés ont reçu des notes de qualité sur la base de deux
+mesures. Srivastava et ses collaborateurs (30) ont essayé de
+classer la qualité des logiciels en utilisant l'approche floue à
+critères multiples. Cette approche a permis de classer les
+logiciels sur la base des documents de spécifications des
+exigences logicielles. Ils ont réalisé une analyse similaire en
+utilisant le modèle de qualité ISO/IEC 9126 [31]. Yang [32] a
+proposé une approche pour mesurer la qualité des produits
+logiciels avec les normes ISO basées sur la technique FL. Un
+modèle AHP flou a été proposé par Yuen et al (33) pour
+évaluer la qualité du logiciel et pour sélectionner le
+fournisseur du logiciel en cas d'incertitude. Le modèle classe
+les différents logiciels pour permettre de sélectionner le meilleur de manière appropriée. Dans un travail supplémentaire [34], ils ont utilisé le modèle AHP flou et plus
+particulièrement la méthode des moindres carrés logarithmiques flous pour estimer la qualité des logiciels.
+Mago et al. [35] a utilisé FL pour analyser la qualité de la conception de
+logiciels orientés objet.\\
+Pierre Oum Sack propose un modèle d'évaluation de la qualité base sur l' Approche à base d'apprentissage automatique et de transformation de modèles. Ce modèle permet de prédire la maintenabilite des logiciels a base des métriques logiciels.\\
+Salma Hamza propose dans sa thèse Une approche pragmatique pour mesurer la qualité des
+applications à base de composants logiciels.ce modèle permet de prédire la qualité des logiciels a partir des métriques dans le domaine composant tel que les métriques au niveau composants , les métriques au niveau application et  les métriques au niveau interface.\\
+Diverses études ont été consacrées à la prédiction de la
+maintenabilité des logiciels. De nombreuses approches basées
+sur le FL ont été proposées pour mesurer les attributs de
+qualité après coup. Par exemple, Mittal et al (36) ont proposé
+une approche basée sur le FL pour évaluer la productivité de la
+maintenance des systèmes logiciels. Sharam et al (37) ont
+introduit une approche basée sur le FL pour la prédiction de la
+maintenabilité des systèmes basés sur des composants. De
+plus, une autre approche basée sur le FL a été proposée par
+Singh et al (38) pour prédire la maintenance des logiciels.
+Dans notre travail précédent [39], nous avons présenté les
+premières expériences de construction de modèles basés sur le
+FL pour prédire la maintenabilité des logiciels. D'autres
+chercheurs ont envisagé différentes techniques de FL pour
+prédire la maintenabilité du logiciel. De même, différentes
+approches de FL ont été introduites pour évaluer différents
+attributs de qualité tels que la facilité d'utilisation [40], la
+compréhensibilité [41] et la réutilisabilité [42, 43],
+et la fiabilité [44].\\
+Il convient de noter ici qu'aucune des tentatives évoquées
+ci-dessus n'a considéré le modèle de transparence comme un
+objectif. à notre connaissance, les modèles proposés
+précédemment n'étaient pas suffisamment transparents pour
+que l'homme puisse y intégrer ses connaissances. 
+
+\section*{Conclusion}
+Dans cette partie nous avons parlé de l'apprentissage automatiques et présenté quelques
+algorithmes. Nous avons montré son utilisation dans la prédiction de la qualité du logiciel, par l'étude de différents travaux effectués dans le domaine. Nous avons après une critique de l'état l'art.

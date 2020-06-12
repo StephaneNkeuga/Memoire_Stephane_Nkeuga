@@ -1,0 +1,126 @@
+\begin{thebibliography}{10}
+
+\bibitem{russell2016artificial}
+Stuart~J Russell and Peter Norvig.
+\newblock {\em Artificial intelligence: a modern approach}.
+\newblock Malaysia; Pearson Education Limited,, 2016.
+
+\bibitem{crosby1979quality}
+Philip~B Crosby.
+\newblock {\em Quality is free: The art of making quality certain}, volume~94.
+\newblock McGraw-hill New York, 1979.
+
+\bibitem{halstead1977elements}
+Maurice~Howard Halstead et~al.
+\newblock {\em Elements of software science}, volume~7.
+\newblock Elsevier New York, 1977.
+
+\bibitem{mccabe1976complexity}
+Thomas~J McCabe.
+\newblock A complexity measure.
+\newblock {\em IEEE Transactions on software Engineering}, (4):308--320, 1976.
+
+\bibitem{mccabe1989design}
+Thomas~J McCabe and Charles~W Butler.
+\newblock Design complexity measurement and testing.
+\newblock {\em Communications of the ACM}, 32(12):1415--1425, 1989.
+
+\bibitem{iso2003}
+ISO/IEC.
+\newblock Iso/iec 9126-3 software engineering -product quality- part 3 :
+  Internal metrics.
+\newblock 2003.
+
+\bibitem{bieman1996metric}
+James~M Bieman.
+\newblock Metric development for object-oriented software.
+\newblock {\em Software Measurement: Understanding Software Engineering}, pages
+  75--92, 1996.
+
+\bibitem{serebrenik2010theil}
+Alexander Serebrenik and Mark van~den Brand.
+\newblock Theil index for aggregation of software metrics values.
+\newblock In {\em 2010 IEEE International Conference on Software Maintenance},
+  pages 1--9. IEEE, 2010.
+
+\bibitem{vasilescu2010comparative}
+Bogdan Vasilescu, Alexander Serebrenik, and Mark van~den Brand.
+\newblock Comparative study of software metrics? aggregation techniques.
+\newblock {\em Proceedings of the International Worskhop Benevol}, 2010, 2010.
+
+\bibitem{bradski2005learning}
+Gary Bradski, Adrian Kaehler, and Vadim Pisarevsky.
+\newblock Learning-based computer vision with intel's open source computer
+  vision library.
+\newblock {\em Intel technology journal}, 9(2), 2005.
+
+\bibitem{chan1998toward}
+Philip~K Chan and Salvatore~J Stolfo.
+\newblock Toward scalable learning with non-uniform class and cost
+  distributions: A case study in credit card fraud detection.
+\newblock In {\em KDD}, volume 1998, pages 164--168, 1998.
+
+\bibitem{huang2008web}
+Xuedong~D Huang, William~H Gates, Eric~J Horvitz, Joshua~T Goodman, Bradly~A
+  Brunell, Susan~T Dumais, Gary~W Flake, Trenholme~J Griffin, and Oliver
+  Hurst-Hiller.
+\newblock Web-based targeted advertising in a brick-and-mortar retail
+  establishment using online customer information, January~3 2008.
+\newblock US Patent App. 11/427,764.
+
+\bibitem{kononenko2001machine}
+Igor Kononenko.
+\newblock Machine learning for medical diagnosis: history, state of the art and
+  perspective.
+\newblock {\em Artificial Intelligence in medicine}, 23(1):89--109, 2001.
+
+\bibitem{marr2016short}
+Bernard Marr.
+\newblock A short history of machine learning--every manager should read.
+\newblock {\em Forbes. http://tinyurl. com/gslvr6k}, 2016.
+
+\bibitem{domingos1997optimality}
+Pedro Domingos and Michael Pazzani.
+\newblock On the optimality of the simple bayesian classifier under zero-one
+  loss.
+\newblock {\em Machine learning}, 29(2-3):103--130, 1997.
+
+\bibitem{rish2001empirical}
+Irina Rish et~al.
+\newblock An empirical study of the naive bayes classifier.
+\newblock In {\em IJCAI 2001 workshop on empirical methods in artificial
+  intelligence}, volume~3, pages 41--46, 2001.
+
+\bibitem{hechenbichler2004weighted}
+Klaus Hechenbichler and Klaus Schliep.
+\newblock Weighted k-nearest-neighbor techniques and ordinal classification.
+\newblock 2004.
+
+\bibitem{hong2006use}
+Ted Hong and Dimitris Tsamis.
+\newblock Use of knn for the netflix prize.
+\newblock {\em CS229 Projects}, 2006.
+
+\bibitem{shannon1948w}
+CE-Weaver Shannon.
+\newblock W.:(1949) the mathematical theory of communication.
+\newblock {\em Press UoI, editor}, 1948.
+
+\bibitem{fenton1999critique}
+Norman~E Fenton and Martin Neil.
+\newblock A critique of software defect prediction models.
+\newblock {\em IEEE Transactions on software engineering}, 25(5):675--689,
+  1999.
+
+\bibitem{barry1981software}
+Boehm Barry et~al.
+\newblock Software engineering economics.
+\newblock {\em New York}, 197, 1981.
+
+\bibitem{clark1998calibrating}
+Bradford Clark, Sunita Devnani-Chulani, and Barry Boehm.
+\newblock Calibrating the cocomo ii post-architecture model.
+\newblock In {\em Proceedings of the 20th international conference on Software
+  engineering}, pages 477--480. IEEE, 1998.
+
+\end{thebibliography}

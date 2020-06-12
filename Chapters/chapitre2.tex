@@ -1,0 +1,355 @@
+% !TeX encoding = ISO-8859-1
+\chapter{Pré-traitement des données et construction du jeu de données} 
+\label{chap:2}
+\minitoc
+
+\section{Introduction}
+
+Dans ce chapitre, nous avons discuté de la façon dont les ensembles de données sont préparés
+en utilisant les mesures Chidamber et Kemerer. 
+%Un exemple est illustré pour comprendre la formation des ensembles de données. Nous avons également discuté de chaque métrique avec des descriptions détaillées.
+
+\section{Caractéristiques à évaluer}
+Ici il est question de bien clairement définir les caractéristiques ou attributs de qualité que nous souhaitons évaluer.Selon notre modèle de qualité choisi notamment le modèle ISO 9126 , la qualité du logiciel est subdivisé en 6 principales caractéristiques ou attributs à savoir:\\
+\renewcommand{\multirowsetup}{\bfseries\normalsize}
+\begin{center}
+	\begin{longtable}{|p{3cm}|p{11cm}|}
+		\hline 
+		\textbf{Attribut} & \textbf{Définition}\\ 
+		\hline 
+		\center{\textbf{Capacité fonctionnelle }}& La capacité du produit logiciel à fournir des fonctions qui répondent aux besoins déclarés et implicites lorsque le logiciel est utilisé dans des conditions précises. \\ 
+		\hline 
+		\center{\textbf{Fiabilité}} & La capacité du produit logiciel à maintenir un niveau de performance spécifié lorsqu'il est utilisé sous conditions spécifiées. \\ 
+		\hline 
+		\center{\textbf{Facilité d'utilisation}} & la capacité du produit logiciel à être compris, appris et attractif pour les utilisateurs, selon des circonstances spécifiques d'utilisation \\ 
+		\hline 
+		\center{\textbf{Efficacité}} & la capacité du produit logiciel à fournir le niveau attendu de performances,en fonction des ressources utilisées selon des conditions fixées  \\ 
+		\hline 
+		\center{\textbf{Maintenabilité}} & la capacité du produit logiciel à être modifiée. Les modifications incluent les corrections, les améliorations et l'adaptation lors d'un changement d'environnement, d'exigences ou de spécifications fonctionnelles  \\ 
+		\hline 
+		\center{\textbf{Portabilité}} & la capacité d'une application à basculer d'un environnement à un autre \\ 
+		\hline 
+		
+		\caption{Attributs de qualité du modèle ISO 9126}
+		
+	\end{longtable}
+\end{center}
+Chacune de ces attributs de qualité est subdivise en sous-caractéristiques suivant le tableau :\\
+\renewcommand{\multirowsetup}{\bfseries\normalsize}
+\begin{center}
+	\begin{longtable}{|p{3cm}|p{3cm}|p{11cm}|}
+		\hline 
+		\begin{center}
+			\textbf{Les caractéristiques}
+		\end{center} & 
+		\begin{center}
+			\textbf{Sous-caractéristiques}
+		\end{center} & 
+		\begin{center}
+			\textbf{Définition}
+		\end{center} 
+		\\\hline 
+		\endfirsthead
+		\hline
+		\begin{center}
+			\textbf{Les caractéristiques}
+		\end{center} & \begin{center}
+			\textbf{Sous-caractéristiques}
+		\end{center} & \begin{center}
+			\textbf{Définition}
+		\end{center} \\ 
+		\hline 
+		\endhead
+		\hline
+		\endfoot
+		\endlastfoot																						
+		& Pertinence & La capacité du produit logiciel à fournir un ensemble approprié de fonctions pour des tâches spécifiques et les objectifs des utilisateurs.\\
+		\cline{2-3} 
+		
+		& Précision & La capacité du produit logiciel à fournir les résultats ou effets corrects ou convenus avec les degrés de précision. \\ \cline{2-3} 
+		
+		\multirow{5}{3cm}{Capacité fonctionnelle} & 	L'interopérabilité & 	La capacité du produit logiciel à interagir avec un ou plusieurs systèmes spécifiques \\ 
+		\cline{2-3} 
+		& Conformité &La capacité du produit logiciel à respecter les normes, conventions ou règlements dans les lois et des prescriptions similaires relatives à la fonctionnalité. \\ 
+		\cline{2-3} 
+		& Sécurité & La capacité du produit logiciel à protéger les informations et les données de sorte que les personnes non autorisées ou Les systèmes ne peuvent pas les lire ou les modifier et les personnes ou systèmes autorisés ne se voient pas refuser l'accès à ces systèmes. \\ 
+		\hline 
+		& Maturité &La capacité du produit logiciel à éviter les défaillances dues à des défauts du logiciel. \\ \cline{2-3}  
+		\multirow{3}{*}{Fiabilité} & Tolérance aux pannes &La capacité du produit logiciel à maintenir un niveau de performance déterminé dans le cas d'un logiciel ou de violation de son interface spécifiée. \\ 
+		\cline{2-3} 
+		& Possibilité de récupération & La capacité du produit logiciel à rétablir un niveau de performance spécifié et à récupérer les données directement affectées en cas de panne. \\ 
+		\hline 
+		& Compréhensibilité & La capacité du produit logiciel à permettre à l'utilisateur de comprendre si le logiciel est adapté, et comment il peut être utilisé pour des tâches et des conditions d'utilisation particulières. \\ \cline{2-3} 
+		\multirow{3}{3cm}{Facilité d'utilisation} & Facilité d'apprentissage & La capacité du produit logiciel à permettre à l'utilisateur(novice , expert) d'apprendre son application  \\ 
+		\cline{2-3} 
+		& Opérabilité & La capacité du produit logiciel à permettre à l'utilisateur de l'exploiter et de le contrôler. \\ 
+		\hline
+		\multirow{2}{*}{Efficacité} & efficacité en temps & La capacité du produit logiciel à fournir des temps de réponse et de traitement et des débits appropriés lors de l'exécution de sa fonction, dans des conditions déterminées. \\ 
+		\cline{2-3} 
+		& efficacité en ressources & La capacité du produit logiciel à utiliser des quantités et des types de ressources( à savoir l'utilisation de la mémoire, du processeur, du disque et du réseau.) appropriés lorsque le logiciel remplit sa fonction dans des conditions déterminées. \\ 
+		\hline 
+		& Analysabilité & La capacité du produit logiciel à être diagnostiqué pour les déficiences ou les causes de défaillances du logiciel, ou à identifier les parties à modifier. \\ 
+		\cline{2-3} 
+		\multirow{4}{*}{Maintenabilité} & Changeabilité & La capacité du produit logiciel à permettre la mise en ?uvre d'une modification spécifique. \\ 
+		\cline{2-3} 
+		& La stabilité & La capacité du produit logiciel à éviter les effets inattendus des modifications du logiciel.\\ 
+		\cline{2-3} 
+		& Testabilité & la capacité du produit logiciel à permettre la validation d'un logiciel modifié. \\ 
+		\hline 
+		& Adaptabilité & La capacité du produit logiciel à être adapté à différents environnements spécifiés sans appliquer des actions ou des moyens autres que ceux prévus à cet effet pour le logiciel considéré. \\ 
+		\cline{2-3} 
+		\multirow{4}{*}{Portabilité} & Installabilité & La capacité du produit logiciel à être installé dans un environnement spécifique \\ 
+		\cline{2-3} 
+		& 	Conformité aux règles de portabilité & La capacité du produit logiciel à respecter les normes ou conventions relatives à la portabilité. Un exemple serait la conformité Open SQL qui concerne la portabilité de la base de données utilisée. \\ 
+		\cline{2-3} 
+		& interchangeabilité & La capacité du produit logiciel à être utilisé à la place d'un autre produit logiciel spécifié pour le
+		même objectif dans le même environnement. \\ 
+		\hline 
+		
+		
+		
+		\caption{Le tableau complet des caractéristiques et sous-caractéristiques du modèle de qualité ISO 9126-1}
+	\end{longtable}
+	
+\end{center}
+
+La prochaine étape consiste à associer les métriques aux caractéristiques et sous-caractéristiques définies plus haut. 
+La qualité est un concept générique associé à un produit logiciel. Les caractéristiques tels que la maintenabilité représentent les attributs de haut nivaux dans les modèles qualitatifs tel que la norme ISO 9126.Ces attributs ne sont pas directement  mesurables et doivent être décomposé en sous-caractéristiques comme l'illustre le tableau précédent \label{table}. Le processus de décomposition est appliqué jusqu'à l'obtention des entités attributs,qui elles sont mesurables. ces attributs peuvent être simple ou dérivé.\\
+L'évaluation de la qualité dans ce mémoire s'appuie sur le modèle de qualité issue de la norme ISO 9126, ce modèle qui se concentre sur l'évaluation de la \textbf{ qualité du produit} définie les facteurs assez précis pour atteindre cet objectif.Par la suite nous définirons de façon sommaire les sous-caractéristiques selon le modèle de qualité ISO 9126.\\
+\begin{center}
+	\begin{longtable}{|p{4cm}|p{3.5cm}|p{8cm}|}
+		
+		\hline
+		Sous-caractéristiques & Attributs & Propriétés de mesures \\ \hline
+		& Structure du code & complexité, abstraction, encapsulation, taille du code\\
+		\cline{2-3}
+		\multirow{4}{*}{Modifiabilité} & Documentation & Commentaire \\ \cline{2-3}
+		&Modularité & encapsulation, cohésion, couplage \\ \cline{2-3}
+		&Localisation de changements & Cohésion, abstraction, polymorphisme\\ \hline
+		
+		\multirow{2}{*}{Testabilité} & Structure & complexité, abstraction, héritage\\ \cline{2-3}
+		&Concision & Complexité, cohésion, couplage \\ \hline
+		\multirow{2}{*}{Stabilité} & Encapsulation&  Encapsulation\\ \cline{2-3}
+		&Héritage& héritage \\ \hline
+		\multirow{2}{*}{Analysabilité}& Structure &Complexité \\ \cline{2-3}
+		&Couplage& couplage\\ \hline
+		
+		
+		
+		\caption{les caractéristiques et attributs de la maintenabilité}
+		
+	\end{longtable} % reference ici
+\end{center}
+\begin{center}
+	\begin{longtable}{|p{4cm}|p{3.5cm}|p{8cm}|}
+		\hline
+		
+		Sous-Caractéristiques & Attributs & Propriétés mesurées\\ \hline
+		
+		&Documentation de qualité & Présence des documents de formation,système, etc.\\ \cline{2-3}
+		\multirow{3}{*}{Compréhensibilité} & Documentation disponible & La qualité du manuel utilisateur(claire,
+		complet, aide)\\ \cline{2-3}
+		&Convention de codage &  Nommage, structuration du code, etc.\\ \hline
+		&Temps d'utilisation & Niveau d?expertise (débutant, avancé,expert)\\ \cline{2-3}
+		\multirow{4}{*}{Apprentissage}&Temps de configuration &Niveau d?expertise (débutant, avancé,expert)\\ \cline{2-3}
+		&Temps d?expertise & Niveau d?expertise (débutant, avancé,expert)\\ \cline{2-3}
+		&Temps d?administration & Niveau d?expertise (débutant, avancé, expert)\\ \hline
+		
+		&Niveau de complexité &(débutant, avancé, expert)\\\cline{2-3}
+		\multirow{4}{*}{Opérabilité} & Interfaces fournies & Présence\\ \cline{2-3}
+		&Interfaces requises &Présence\\\cline{2-3}
+		&Effort d?utilisation & Niveau d?expertise (débutant, avancé, expert)\\\hline
+		
+		
+		\caption{Les caractéristiques et attributs de l'utilisabilité}
+		
+	\end{longtable}
+\end{center}
+\begin{center}
+	\begin{longtable}{|p{4cm}|p{3.5cm}|p{8cm}|}
+		\hline
+		Sous-Caractéristiques & Attributs &Propriétés mesurées\\\hline
+		&Volatilité & Mesure le temps moyen entre les différentes versions du logiciel\\\cline{2-3}
+		\multirow{3}{*}{Maturité} & Evolutibilité & C?est la mesure des versions produites du logiciel\\\cline{2-3}
+		&Bugs traités & Mesure le nombre moyen des bogues traités dans les précédentes versions\\\hline
+		& &\\
+		\multirow{3}{*}{Tolérance aux pannes$^{*}$} & &\\
+		& &\\\hline
+		&Sérialisation & Présence des mécanismes permettant la sérialisation\\\cline{2-3}
+		\multirow{4}{*}{Capacité de récupération$^{*}$} & Persistance & Présence de mécanismes de gestion de la persistance\\\cline{2-3}
+		&Transaction & Présence de mécanismes permettant la gestion des transactions\\\cline{2-3}
+		&Gestion des erreurs & Présence de mécanismes permettant la gestion des exceptions et des erreurs\\\hline
+		
+		\caption{Les caractéristiques de la fiabilité}
+	\end{longtable}% reference ici
+\end{center}
+Le logiciel étant une entité abstraite , l'élément qui reste incontournable pour son évaluation est son code source.D'après le tableau précédant nous avons raffiné les caractéristiques en sous-caractéristique puis chaque sous-caractéristique en entité mesurable au travers des métriques de code , ce qui fait passer la métrique à une position centrale dans le processus d'évaluation de la qualité du logiciel.Nous distinguerons principalement deux types de métriques: les métriques simple et les métriques dérivées 
+une métrique sera dite simple lorsqu'elle indépendamment fonctionnelle des autres métriques, un exemple de métrique simple est la métrique SLOC qui compte le nombre de ligne de code pour une méthode , une classe ou encore même un paquetage.Une métrique dérivée se définit comme une fonction ou formule qui combine deux ou plusieurs métriques.Dans le modèle de qualité instancié pas Bansiya dans %Reference ici,
+Bansiya réussi à attribuer les mesures de conception aux propriétés de conception. Il combine les métriques de manière significative. Ainsi la validité des propriétés de conception dépend directement des mesures et de leur combinaison.Selon Bansiya une
+combinaison de métriques de code source doit être effectuée avec soin car plus les métriques
+sont combinées, moins l'influence d'une seule source peut être vérifiée de manière fiable. Il faut
+donc faire un compromis entre l'expressivité et la traçabilité d'une propriété de conception.
+Bansiya n'utilise qu'une seule mesure pour une propriété de conception, on peut donc dire qu'une bonne traçabilte est assuré.Dans le tableau suivant on peut voir quelles mesures sont utilises pour évaluer les propriétés de conception:\\
+\begin{center}
+	\begin{longtable}{|p{2.5cm}|p{10cm}|p{3cm}|}
+		\hline
+		Propriété& Définition& Exemple de mesure\\\hline
+		Taille& Mesure par exemple le nombre de classe dans un projet & Nombres de classes\\\hline
+		Hiérarchies &  Les hiérarchies sont utilisées pour représenter différent aspect de la généralisation-spécification. Mesure par exemple le nombre de classes non-héritées qui possèdent des classes filles dans un logiciel &Nombre hiérarchies\\\hline
+		Abstraction & Mesure de l?aspect généralisation-spécification.& Nombre d?ancêtres\\\hline
+		Encapsulation & Elle définit le comportement d?un objet pendant sa création ou son utilisation. Dans le
+		paradigme objet mesure la visibilité des déclarations (attributs et méthodes) par les autres objets &
+		Mesure d'accès aux données\\\hline
+		Couplage & Mesure l?interdépendance d?un objet dans un autre objet de la conception. Mesure également
+		le nombre d'objets qui sont accédés par un objet pour le fonctionnement de ces derniers & Couplage direct entre classe\\\hline
+		Cohésion & Mesure les relations connexes entre les attributs et les méthodes dans une classe & Cohésion entre les méthodes dans une classe\\\hline
+		Composition & Mesure les relations \textit{Est une partie de, consiste en,} ce sont les relations d?agrégations dans le paradigme objet & Mesure de l?agrégation\\\hline
+		Héritage & C'est la mesure des relations d?héritages(est un) entre les classes. Cette relation est liée au niveau d?imbrication des classes dans l'hipparchie d?héritages & Mesure de l'abstraction fonctionnelle\\\hline
+		Complexité & Mesure le degré de difficulté dans la compréhension et la structuration interne ou externe des classes et de leur relation & Nombre de méthodes\\\hline
+		Polymorphisme & Mesure les services (méthodes) qui sont dynamiquement déterminés au moment de l'exécution & Nombre de méthodes polymorphiques\\\hline
+		Appel et utilisation(messagerie) & Mesure le nombre des méthodes publiques qui sont visibles et disponibles par les autres classes, mesure également les services fournies & Taille des méthodes dans une interface
+		\\\hline
+		
+		\caption{Tableau des propriétés conception mesurées}
+		
+	\end{longtable}
+\end{center}
+Bansiya utilise des propriétés de conception pondérées pour construire un attribut de qualité.Il met sur pied plusieurs formules donc les pondérations et la combinaison des propriétés sont résumés dans le tableau suivant.\\
+\begin{center}
+	\begin{longtable}{|p{5.5cm}|p{11cm}|}
+		\hline
+		\begin{center}Attribut de qualité\end{center} & \begin{center}Calcul de l'indice\end{center}\\\hline
+		Formule 1: Réutilisabilité & =$ ?0.25*Coupling + 0.25*Cohesion + 0.5*Messaging + 0.5*DesignSize$\\\hline
+		Formule 2: Flexibilité & =$0.25*Encapsulation ? 0.25*Coupling + 0.5*Composition + 0.5*Polymorphism$
+		\\\hline
+		Formule 3: Compréhensibilité & = $?0.33*Abstraction + 0.33*Encapsulation ? 0.33*Coupling + 0.33*Cohesion?0.33*Polymorphism?0.33*Complexity ?0.33*DesignSize$
+		\\\hline
+		Formule 4: Fonctionnalité & = $0.12*Cohesion + 0.22*Polymorphism + 0.22*Messaging + 0.22*DesignSize + 0.22*Hierarchies$\\\hline
+		Formule 5: Extensibilité & = $0.5*Abstraction?0.5*Coupling+0.5*Inheritance+0.5*Polymorphism$\\\hline
+		Formule 6: Effectivité & = $0.2*Abstraction + 0.2*Encapsulation + 0.2*Composition + 0.2*Inheritance + 0.2*Polymorphism$\\\hline
+		
+		\caption{Formules de calcul des attributs de qualité de Bansiya}
+		
+	\end{longtable} 
+\end{center}
+Comme on peut le voir, les pondérations peuvent être positives ou négatives. Le signe
+algébrique indique que la propriété de conception spécifié a une influence respectivement
+positive ou négative sur l'attribut de qualité. Par exemple, la réutilisabilité est positivement
+influencée par la taille du design (plus il y a de classes, plus on peut réutiliser), la cohésion (plus
+le design est cohésif, plus il y a de modules qui peuvent être utilisés dans d'autres projets) et la
+messagerie (plus le design offre de services, plus il a de chances d'être utilisé dans un autre
+contexte). D'autre part, le couplage réduit la réutilisabilité (plus un objet est couplé à un autre,
+moins il est possible de l'utiliser dans un contexte différent).
+La somme des propriétés de conception pondérées se situe dans la plage de [-1... + 1],
+de sorte que tous les attributs de qualité ont la même plage. Pour les influences positives,
+une valeur pondérée initiale de +1 ou +0,5 a été fixée. Pour les influences négatives, une
+valeur de -1 ou -0,5 a été choisie. Cette valeur a ensuite été modifiée proportionnellement
+de manière à ce que la somme des pondérations obtenues donne $ ±1 $.\\
+%Pour une meilleure illustration de la corrélation entre les attributs de qualité et les
+%accessoires de conception, voir le tableau 5.4
+Ainsi nous pouvons en déduire la formule suivante pour la maintenabilité:
+
+\textbf{Maintenabilité=$\alpha *Analysability + \beta * Changeability + \lambda * Stability + \Theta * T estability$}
+Où les poids $  \alpha, \beta, \lambda, \Theta $ sont obtenus grâce au processus de pondération utilisé par Bansiya . Les métriques simples et dérivées sont décrites par une échelles et une unité. Une échelle est un ensemble ordonné de valeurs, continue ou discrète associée à une mesure. Une unité
+est normalement associée à une échelle. Quatre types d?échelles sont communément définies :\\
+? Nominale : les valeurs mesurées sont catégorisées.\\
+? Ordinale : les valeurs mesurées sont ordonnées, exemple la classification des pannes
+suivant leurs niveaux de sévérité.\\
+? Intervalle : Les valeurs mesurées sont à égale distance si elles correspondent à des
+attributs de même distance. Par exemple la complexité cyclomatique a une valeur
+minimale, mais chaque incrémentation représente un chemin additionnel.\\
+? Ratio : par exemple le ratio de bugs (pannes ou erreurs) détectés par un testeur de
+qualité est double : cela implique par exemple que le testeur est deux fois plus efficace.\\
+%reference pieere oum sack
+
+Ces différentes sous-caractéristiques sont en fonction d?un ensemble de métriques.Les métriques sont choisies en fonction des attributs et propriétés mesurées décrit dans les travaux de thèse de Pierre Oum Sack %reference tableau des propirités de conception % 
+et des articles \textit{"A mapping study on design-time quality attributes and metrics" et "Empirical Evidence on the Link between Object-Oriented Measures and External Quality Attributes" }comme décrit dans le tableau%refernece tbleau ici proprites  
+. Dans ces articles les auteurs font un mapping entre les attributs de qualité de haut niveau tel que la maintenabilité avec les métrique de bas niveau en suivant une méthodologie de Goal Questions Metrics introduit par Basili. %Reference ici bassili
+Cette méthodologie consiste dans un premier temps à formuler les Questions permettant de préciser les Attributs de qualités de haut niveau.Par la suite ils identifient plusieurs critères tel que les journaux ayant publiés des articles liés à la qualité logicielle ou encore les articles comprenant les mots clés tel que\textit{"attribut de qualité" OU "caractéristique de qualité" OU "métrique de qualité" OU "métrique de logiciel" OU "mesure de logiciel" OU "exigence de qualité" OU "cadre de qualité" OU "exigence non fonctionnelle" OU "exigence non fonctionnelle}, après la sélection des critères ils en ressortent avec plus de 2800 articles lies à la qualité logicielle,puis  la dernière étape consiste à associer les  attributs de qualités aux mesures %reference ici jssfra
+suivant la figure ci-dessous: \begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.8]{metricquality.PNG}
+	\caption{Mapping entre les attributs de qualité et les métriques du code}
+\end{figure}
+
+La caractéristique maintenabilité  qui par exemple est = $\alpha *Analysability + \beta * Changeability + \lambda * Stability + \Theta * T estability$ \\
+ici $  \alpha, \beta, \lambda, \Theta $ ont la valeur 1,on supposera pour cela que les sous-caractéristiques ont une influence équivalente.%refernece pierre oum sack
+Ainsi dans ce travail nous utiliserons les formules suivantes pour les différentes sous-caractéristiques de la maintenabilité:\\
+Analysabilité = $ 0.5*WMC +0.5*CBO$\\
+Modifiabilite = $ 0.25 * LCOM + 0.25*DIT+	0.25*LOC +0.25*CBO $\\
+Stabilité = $0.5*DIT+0.5*NOC$\\
+Testabilité = $0.33*DIT+0.33*CBO+0.34*LCOM$\\
+
+\textbf{Ici nos formules à discuter avec l'enseignant}
+
+\section{Extraction du programme}
+Les données que nous avons utilisé dans un premier temps proviennent des ensembles PROMISE de la NASA. Nous avons utilisé l'ensemble de donnée provenant du dêpot KC1. La description détaillé de l'ensemble de donnée est contenu dans le tableau suivant. Cet ensemble de données est préparé avec l'extraction du code source en utilisant les métriques McCabe, Halstead, Chidamber et Kemerer. Pour comprendre les attributs de Halstead, nous considérons le programme C suivant:\\
+\textbf{
+	main ()\\ \\
+	\{  \\ \\
+	float x, y, z, average;\\ \\
+	scanf(?\%d \%d \%d?, \&x, \&y, \&z);\\ \\
+	average = (x + y + z) / 3;\\ \\
+	printf(?Average is \%d?, average);\\ \\
+	\} \\ 
+	Programme qui calcule la moyenne de 3 nombres
+}\\
+Pour l'extraction de ce code, nous utilisons les attributs HALSTEAD\_OPERATOR, HALSTEAD\_OPERANDS, HALSTEAD\_PROGRAM\_LENGTH, HALSTEAD\_VOLUME.
+Dans ce programme le nombre $n_{1}$ d'opérateur est 10, nous avons \textbf{main,( ,) ,float, \&, =, +, /, printf,et scanf }.\\
+Les Opérandes uniques $n_{2}$ sont au nombre de 7, il s'agit de \textbf{ x, y, z, average, ?\%d, \%d, \%d?, 3, ?Average is = \%d?}.\\
+Le nombre total d'opérateurs, $N_{1}$ est de 16 et le nombre total d'opérandes, $N_{2}$ est de 15, donc la taille du programme N est égale à 31.\\
+Ainsi nous avons les mesures suivantes en ce qui concerne :\\
+$HALSTEAD\_PROGRAM\_LENGTH :\\ 
+N = n_{1}\log_{2}n_{1} + n_{2}\log_{2}n_{2} = 10\log_{2}10 + 7\log_{2}7 = 52.9$\\
+$HALSTEAD\_VOLUME, V = N\log_{2}n = 31log_{2}17 = 126.7$
+
+
+
+
+
+
+
+
+
+
+\subsection{Attributs et modules des ensembles de données}
+
+Le dépôt PROMISE de la NASA est un célèbre dépôt de données où des programmes ont été
+utilisés pour le système terrestre ou le système de satellites. Les programmes étaient écrits en
+C ou C++. Ces ensembles de données ont été créés avec l'extraction de programmes en utilisant
+des métriques. Dans cette section, nous  décrivons les attributs de l'ensemble de données KC1 avec les
+métriques d'extraction.
+Dans ce travail nous utiliserons le dépôt KC1 Prévision des défauts des logiciels qui est un des ensembles de données de défaut du programme de données métriques(MDP) de la NASA.Cet ensemble de donnée est écrit en langage C++ et ses données provenant d'un logiciel de gestion du stockage pour la réception et le traitement des données au sol. Les données proviennent des extracteurs de code source de McCabe et Halstead. Ces caractéristiques ont été définies dans les années 70 pour tenter de caractériser objectivement les caractéristiques du code qui sont associées à la qualité des logiciels.Il contient 2109 modules ou instances et 22 attributs décomposé comme suit 5  mesures différentes de lignes de code , 3 mesures McCabe, 4 mesures Halstead de base, 8 mesures Halstead dérivées, un compte de branche et 1 champ de but)\\
+%tableau du jeu de donnée KC1
+
+
+
+Dans un second temps nous utilisons les données provenant de 3 projets logiciels tel que Apache ou encore Azeureus. Azeurus est un client torrent  à l'instar de Utorrent ou BitTorrent.Azeurus est écrit en java et contient plus 4000 classes et plus de quatre cent mille lignes de code.  
+Pour l'extraction du code source nous avons utilisés CK(Chidamber-Kemerer metrics).CK calcule des mesures de code au niveau de la classe et au niveau de la métrique dans les projets Java au moyen d'une analyse statique (c'est-à-dire sans avoir besoin de code compilé). Actuellement, il contient un large ensemble de métriques, dont nous pouvons cité :\\
+\textbf{CBO (Couplage entre objets)}: Compte le nombre de dépendances d'une classe.
+Les outils vérifient tout type utilisé dans l'ensemble de la classe (déclaration de champ, méthode
+types de déclarations, déclarations variables, etc). Il ignore les dépendances à Java lui-même
+(par exemple java.lang.String).\\
+\textbf{DIT (Depth Inheritance Tree)} : Il compte le nombre de "mères" que possède une classe.
+Toutes les classes ont un DIT d'au moins 1 (tout le monde hérite de java.lang.Object).
+Pour que cela se produise, des classes doivent exister dans le projet (c'est-à-dire si une classe
+dépend de X qui s'appuie sur un fichier jar/dépendance, et X dépend d'autres classes, DIT est compté comme 2).\\
+\textbf{Nombre de méthodes}: compte le nombre de méthodes.\\
+\textbf{NOSI (Nombre d'appels statiques) }: compte le nombre d'appels aux méthodes statiques.\\
+\textbf{RFC (Response for a Class)} : compte le nombre d'appels de méthode uniques dans une classe. Comme les appels sont résolus via une analyse statique, cette implémentation échoue lorsqu'une méthode a des surcharges avec le même nombre de paramètres, mais des types différents.\\
+\textbf{WMC (Weight Method Class) ou la complexité de McCabe} . Il compte le nombre d'instructions de branche dans une classe.\\
+\textbf{LOC (lignes de code) }: il compte les lignes de code du programme, en ignorant les lignes vides et les commentaires (c'est-à-dire, c'est les lignes de code source ou SLOC).\\
+\textbf{LCOM (manque de cohésion des méthodes)} : calcule la métrique LCOM.\\
+\textbf{TCC (Tight Class Cohesion)} : mesure la cohésion d'une classe avec une plage de valeurs de 0 à 1.\\
+\textbf{LCC (Loose Class Cohesion)} : Similaire au TCC mais il inclut en outre le nombre de connexions indirectes entre les classes visibles pour le calcul de la cohésion.\\ %reference de github 
+%Tableau de donnée du projet azeurus
+%\subsection{Formation des jeux de données à partir des métriques}
+Dans cette chapitre chapitre nous avons identifiés les attributs de qualités, après les avoir décomposés en sous-caractéristiques ,nous les avons associés aux métriques de bas niveau afin qu'ils servent de variables d'entrée dans nos différents algorithmes d'apprentissage automatique 
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[scale=0.5]{recapchap2.PNG}
+	\caption{Schema de décomposition des attributs de qualité}
+\end{figure}
+
+

@@ -1,0 +1,13 @@
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.1}Introduction}{\reset@font\mtcSfont 56}{section.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.2}Pr\'esentation du mod\`ele de qualit\'e }{\reset@font\mtcSfont 56}{section.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.3}Pr\'esentation de l'extracteur des m\'etriques CK(Chidamber-Kemerer metrics)}{\reset@font\mtcSfont 57}{section.3.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.1}Fonctionnement CK(Chidamber-Kemerer metrics)}{\reset@font\mtcSSfont 57}{subsection.3.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.3.2}Utilisation de CK(Chidamber-Kemerer metrics)}{\reset@font\mtcSSfont 58}{subsection.3.3.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {3.4}WEKA( Waikato Environment for Knowledge Analysis)}{\reset@font\mtcSfont 59}{section.3.4}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {3.4.1}Pr\'esentation de WEKA}{\reset@font\mtcSSfont 60}{subsection.3.4.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.4.1.1}Onglet Preprocess}{\reset@font\mtcSSSfont 62}{subsubsection.3.4.1.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.4.1.2}Onglet Classify}{\reset@font\mtcSSSfont 62}{subsubsection.3.4.1.2}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.4.1.3}Onglet Cluster}{\reset@font\mtcSSSfont 62}{subsubsection.3.4.1.3}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.4.1.4}Onglet Associate}{\reset@font\mtcSSSfont 62}{subsubsection.3.4.1.4}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.4.1.5}Onglet S\'election des attributs}{\reset@font\mtcSSSfont 63}{subsubsection.3.4.1.5}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {3.4.1.6}Onglet Visualisation}{\reset@font\mtcSSSfont 63}{subsubsection.3.4.1.6}}

@@ -1,0 +1,35 @@
+\babel@toc {french}{}
+\deactivateaddvspace 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {D\'edicace}}{i}{chapter*.1}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {REMERCIEMENTS}}{ii}{chapter*.2}% 
+\contentsline {xchapter}{}{vi}{chapter*.4}% 
+\contentsline {xchapter}{}{vii}{chapter*.5}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {R\'ESUM\'{E}}}{viii}{chapter*.6}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {ABSTRACT}}{ix}{chapter*.7}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {introduction g\'en\'erale}}{1}{chapter*.8}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {\'etat de l'art.}}{5}{chapter.1}% 
+\contentsline {table}{\numberline {1.1}{\ignorespaces Liste des propri\'et\'es porteuses de qualit\'e. Chacune de ces propri\'et\'es peut \^etre appliqu\'ee \`a une ou plusieurs formes structurelles(les expressions, les variables, les boucles), et affecte un ou plusieurs attributs de qualit\'e\relax }}{16}{table.caption.15}% 
+\contentsline {table}{\numberline {1.2}{\ignorespaces Un exemple de graphe de flot de contr\^ole avec les trois diff\'erents chemins lin\'eairement ind\'ependants.\relax }}{20}{table.caption.17}% 
+\contentsline {table}{\numberline {1.3}{\ignorespaces Les moyennes simples de la m\'etrique SLOC pour quatre m\'ethodes dans deux classes diff\'erentes\relax }}{25}{table.caption.18}% 
+\contentsline {table}{\numberline {1.4}{\ignorespaces Exemple de poids appliqu\'es sur SLOC\relax }}{26}{table.caption.19}% 
+\contentsline {table}{\numberline {1.5}{\ignorespaces Les moyennes de deux versions diff\'erentes d'un m\^eme projet\relax }}{26}{table.caption.20}% 
+\contentsline {table}{\numberline {1.6}{\ignorespaces Historique\relax }}{30}{table.1.6}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {Pr\'e-traitement des donn\'ees et construction du jeu de donn\'ees}}{45}{chapter.2}% 
+\contentsline {table}{\numberline {2.1}{\ignorespaces Attributs de qualit\'e du mod\`ele ISO 9126\relax }}{46}{table.2.1}% 
+\contentsline {table}{\numberline {2.2}{\ignorespaces Le tableau complet des caract\'eristiques et sous-caract\'eristiques du mod\`ele de qualit\'e ISO 9126-1\relax }}{48}{table.2.2}% 
+\contentsline {table}{\numberline {2.3}{\ignorespaces les caract\'eristiques et attributs de la maintenabilit\'e\relax }}{48}{table.2.3}% 
+\contentsline {table}{\numberline {2.4}{\ignorespaces Les caract\'eristiques et attributs de l'utilisabilit\'e\relax }}{49}{table.2.4}% 
+\contentsline {table}{\numberline {2.5}{\ignorespaces Les caract\'eristiques de la fiabilit\'e\relax }}{50}{table.2.5}% 
+\contentsline {table}{\numberline {2.6}{\ignorespaces Tableau des propri\'et\'es conception mesur\'ees\relax }}{51}{table.2.6}% 
+\contentsline {table}{\numberline {2.7}{\ignorespaces Formules de calcul des attributs de qualit\'e de Bansiya\relax }}{52}{table.2.7}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {Impl\'ementation:Pr\'esentation des diff\'erents outils Et interpr\'etation des r\'esultats}}{56}{chapter.3}% 
+\addvspace {10\p@ }
+\contentsline {xchapter}{\spacedlowsmallcaps {Conclusion g\'en\'erale}}{64}{chapter*.40}% 

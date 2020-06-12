@@ -1,0 +1,83 @@
+\babel@toc {french}{}
+\vspace {-\cftbeforechapskip }
+\contentsline {chapter}{\spacedlowsmallcaps {D\'edicace}}{i}{chapter*.1}% 
+\contentsline {chapter}{\spacedlowsmallcaps {REMERCIEMENTS}}{ii}{chapter*.2}% 
+\contentsline {chapter}{{\scshape table des figures}}{vi}{chapter*.4}% 
+\contentsline {xchapter}{}{vi}{chapter*.4}% 
+\contentsline {chapter}{{\scshape liste des tableaux}}{vii}{chapter*.5}% 
+\contentsline {xchapter}{}{vii}{chapter*.5}% 
+\contentsline {chapter}{\spacedlowsmallcaps {R\'ESUM\'{E}}}{viii}{chapter*.6}% 
+\contentsline {paragraph}{Mots cl\'es: }{viii}{chapter*.6}% 
+\contentsline {chapter}{\spacedlowsmallcaps {ABSTRACT}}{ix}{chapter*.7}% 
+\contentsline {paragraph}{Keywords: }{ix}{chapter*.7}% 
+\contentsline {chapter}{\spacedlowsmallcaps {introduction g\'en\'erale}}{1}{chapter*.8}% 
+\contentsline {section}{Contexte et motivations}{1}{chapter*.8}% 
+\contentsline {section}{Probl\'ematique}{2}{chapter*.8}% 
+\contentsline {section}{Objectifs g\'en\'eral et sp\'ecifiques}{2}{chapter*.8}% 
+\contentsline {section}{M\'ethodologie}{3}{chapter*.8}% 
+\contentsline {section}{Plan du document}{3}{chapter*.8}% 
+\contentsline {paragraph}{Chapitre 1: \'Etat de l'art.}{4}{chapter*.8}% 
+\contentsline {paragraph}{Chapitre 2: Pr\'e-traitement des donn\'ees et construction du jeu de donn\'ees }{4}{chapter*.8}% 
+\contentsline {paragraph}{Chapitre 3: Impl\'ementation:Pr\'esentation des diff\'erents outils Et interpr\'etation des r\'esultats }{4}{chapter*.8}% 
+\contentsline {paragraph}{Conclusion g\'en\'erale.}{4}{chapter*.8}% 
+\contentsline {chapter}{\numberline {1}\spacedlowsmallcaps {\'etat de l'art.}}{5}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Introduction}{5}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Paradigme de la qualit\'e}{5}{subsection.1.1.1}% 
+\contentsline {subsubsection}{\numberline {1.1.1.1}Les Gourous de la qualit\'e}{5}{subsubsection.1.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}Qualit\'e du logiciel vue sous plusieurs aspects}{7}{subsection.1.1.2}% 
+\contentsline {subsection}{\numberline {1.1.3}Mod\`eles d'\'evaluation de la qualit\'e}{9}{subsection.1.1.3}% 
+\contentsline {subsubsection}{\numberline {1.1.3.1}Le mod\`ele de McCall : Facteurs Crit\`eres M\'etriques-FCM: Qualit\'e logiciel orient\'e produit}{9}{subsubsection.1.1.3.1}% 
+\contentsline {subsubsection}{\numberline {1.1.3.2}Boehm, qualit\'e des produits logiciels}{11}{subsubsection.1.1.3.2}% 
+\contentsline {subsubsection}{\numberline {1.1.3.3}La norme ISO-9126}{12}{subsubsection.1.1.3.3}% 
+\contentsline {subsubsection}{\numberline {1.1.3.4}SQuaRE, Software product QUAlity Requirement and Evaluation}{13}{subsubsection.1.1.3.4}% 
+\contentsline {subsubsection}{\numberline {1.1.3.5}Dromey}{15}{subsubsection.1.1.3.5}% 
+\contentsline {subsubsection}{\numberline {1.1.3.6}Le mod\`ele GQM (Goal Question Metrics)}{16}{subsubsection.1.1.3.6}% 
+\contentsline {section}{\numberline {1.2}Evaluation de la qualit\'e Logicielle}{17}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}\'Evaluation avec les m\'etriques}{17}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}Les m\'etriques de code conventionnelles}{18}{subsection.1.2.2}% 
+\contentsline {subsubsection}{\numberline {1.2.2.1}Halstead}{18}{subsubsection.1.2.2.1}% 
+\contentsline {subsubsection}{\numberline {1.2.2.2}McCabe : Complexit\'e cyclomatique}{18}{subsubsection.1.2.2.2}% 
+\contentsline {subsubsection}{\numberline {1.2.2.3}Les lignes de code}{20}{subsubsection.1.2.2.3}% 
+\contentsline {subsubsection}{\numberline {1.2.2.4}Les m\'etriques de code orient\'e objet}{21}{subsubsection.1.2.2.4}% 
+\contentsline {subsubsection}{\numberline {1.2.2.5}Les m\'etriques de Chidamber et Kemerer}{21}{subsubsection.1.2.2.5}% 
+\contentsline {subsubsection}{\numberline {1.2.2.6}Les m\'etriques de Lorenz et Kidd}{22}{subsubsection.1.2.2.6}% 
+\contentsline {subsubsection}{\numberline {1.2.2.7}Les m\'etriques de design}{23}{subsubsection.1.2.2.7}% 
+\contentsline {section}{\numberline {1.3}D\'efinition et Historique du Machine Learning}{27}{section.1.3}% 
+\contentsline {subsection}{\numberline {1.3.1}D\'efinition}{27}{subsection.1.3.1}% 
+\contentsline {subsection}{\numberline {1.3.2}Historique du Machine Learning}{28}{subsection.1.3.2}% 
+\contentsline {subsection}{\numberline {1.3.3}Performance et sur-apprentissage}{31}{subsection.1.3.3}% 
+\contentsline {subsection}{\numberline {1.3.4}Les diff\'erents types de machine Learning}{32}{subsection.1.3.4}% 
+\contentsline {subsubsection}{\numberline {1.3.4.1}Apprentissage supervis\'e et non supervis\'e}{32}{subsubsection.1.3.4.1}% 
+\contentsline {subsubsection}{\numberline {1.3.4.2}R\'egression et Classification}{33}{subsubsection.1.3.4.2}% 
+\contentsline {section}{\numberline {1.4}Les diff\'erents type d'algorithme de Machine Learning}{33}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Le classifieur na\IeC {\"\i }f de Bayes}{33}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Les k plus proches voisins}{34}{subsection.1.4.2}% 
+\contentsline {subsection}{\numberline {1.4.3}Les arbres de d\'ecision}{34}{subsection.1.4.3}% 
+\contentsline {subsection}{\numberline {1.4.4}L'Algorithme AdaBoost}{37}{subsection.1.4.4}% 
+\contentsline {subsection}{\numberline {1.4.5}M\'ethode fond\'ee sur l'arbre, J48}{38}{subsection.1.4.5}% 
+\contentsline {subsection}{\numberline {1.4.6}Random Forest}{38}{subsection.1.4.6}% 
+\contentsline {section}{\numberline {1.5}Pr\'ediction de la qualit\'e du logiciel , travaux men\'es et m\'ethodes employ\'ees}{40}{section.1.5}% 
+\contentsline {subsection}{\numberline {1.5.1}Quelques travaux importants dans le domaine de la pr\'ediction}{41}{subsection.1.5.1}% 
+\contentsline {subsection}{\numberline {1.5.2}QUANTIFICATION DES PARAM\'eTRES DE QUALIT\'e}{41}{subsection.1.5.2}% 
+\contentsline {subsection}{\numberline {1.5.3}PR\'eVISION DE LA QUALIT\'e DES LOGICIELS BAS\'eE SUR L'APPRENTISSAGE MACHINE}{43}{subsection.1.5.3}% 
+\contentsline {chapter}{\numberline {2}\spacedlowsmallcaps {Pr\'e-traitement des donn\'ees et construction du jeu de donn\'ees}}{45}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Introduction}{45}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Caract\'eristiques \`a \'evaluer}{45}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Extraction du programme}{53}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}Attributs et modules des ensembles de donn\'ees}{54}{subsection.2.3.1}% 
+\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {Impl\'ementation:Pr\'esentation des diff\'erents outils Et interpr\'etation des r\'esultats}}{56}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Introduction}{56}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Pr\'esentation du mod\`ele de qualit\'e }{56}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Pr\'esentation de l'extracteur des m\'etriques CK(Chidamber-Kemerer metrics)}{57}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Fonctionnement CK(Chidamber-Kemerer metrics)}{57}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Utilisation de CK(Chidamber-Kemerer metrics)}{58}{subsection.3.3.2}% 
+\contentsline {section}{\numberline {3.4}WEKA( Waikato Environment for Knowledge Analysis)}{59}{section.3.4}% 
+\contentsline {subsection}{\numberline {3.4.1}Pr\'esentation de WEKA}{60}{subsection.3.4.1}% 
+\contentsline {subsubsection}{\numberline {3.4.1.1}Onglet Preprocess}{62}{subsubsection.3.4.1.1}% 
+\contentsline {subsubsection}{\numberline {3.4.1.2}Onglet Classify}{62}{subsubsection.3.4.1.2}% 
+\contentsline {subsubsection}{\numberline {3.4.1.3}Onglet Cluster}{62}{subsubsection.3.4.1.3}% 
+\contentsline {subsubsection}{\numberline {3.4.1.4}Onglet Associate}{62}{subsubsection.3.4.1.4}% 
+\contentsline {subsubsection}{\numberline {3.4.1.5}Onglet S\'election des attributs}{63}{subsubsection.3.4.1.5}% 
+\contentsline {subsubsection}{\numberline {3.4.1.6}Onglet Visualisation}{63}{subsubsection.3.4.1.6}% 
+\contentsline {chapter}{\spacedlowsmallcaps {Conclusion g\'en\'erale}}{64}{chapter*.40}% 
+\contentsline {chapter}{{\scshape bibliographie}}{66}{chapter*.41}% 

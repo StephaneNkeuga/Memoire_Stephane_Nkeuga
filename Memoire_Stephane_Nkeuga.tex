@@ -1,0 +1,79 @@
+%Réalise par Jerry Lacmou alias Compiii ;-)
+%Mon objectif est de rédiger un document unique en son genre
+
+
+%Définition du type de document
+\documentclass[12pt]{report}
+
+%Inclusion du fichier contenant toutes les packages et les paramètres nécessaires pour
+%le rapport
+\input{config}
+
+\begin{document}
+%\renewcommand\bibname{Références}
+\renewcommand*{\proofname}{Preuve}
+\renewcommand{\mtifont}{\scshape}
+\renewcommand{\mtctitle}{Sommaire}
+\let\subsectionautorefname\sectionautorefname
+\let\subsubsectionautorefname\sectionautorefname
+\renewcommand*{\figureautorefname}{figure}
+\renewcommand*{\equationautorefname}{équation}
+\renewcommand*{\tableautorefname}{tableau}
+\setlength{\arrayrulewidth}{.08em}
+\makeCoverPage
+
+\cleardoublepage
+
+\pagenumbering{roman}
+
+\setcounter{secnumdepth}{-4}% default for "report" is 2 
+
+\printChapter{dedicaces}
+%
+\printChapter{acknowledgements}
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+\dominitoc
+\tableofcontents
+%\addcontentsline{toc}{chapter}{{\scshape table des matières}}
+%\mtcaddchapter
+\listoffigures
+\addcontentsline{toc}{chapter}{{\scshape table des figures}}
+\mtcaddchapter
+\listoftables
+\addcontentsline{toc}{chapter}{{\scshape liste des tableaux}}
+\mtcaddchapter
+%\listofalgorithms
+%\addcontentsline{toc}{chapter}{{\scshape liste des algorithmes}}
+%\mtcaddchapter
+
+\printChapter{abstract_FR}
+%
+\printChapter{abstract_EN}
+
+\pagestyle{fancy}
+
+\newpage
+\pagenumbering{arabic}
+
+\setcounter{mtc}{6}
+\printChapter{introduction}
+
+\setcounter{secnumdepth}{3}% default for "report" is 2
+
+%\printChapter{wlan}
+
+\printChapter{chapitre1}
+
+\printChapter{chapitre2}
+
+\printChapter{chapitre3}
+
+\setcounter{secnumdepth}{-4}% default for "report" is 2
+
+\printChapter{conclusion}
+
+\bibliographystyle{unsrt}
+\bibliography{biblio}
+\addcontentsline{toc}{chapter}{{\scshape bibliographie}}
+
+\end{document}

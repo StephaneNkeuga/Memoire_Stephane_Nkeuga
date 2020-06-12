@@ -1,0 +1,62 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Memoire_Stephane_Nkeuga.aux
+A level-1 auxiliary file: Chapters/dedicaces.aux
+A level-1 auxiliary file: Chapters/acknowledgements.aux
+A level-1 auxiliary file: Chapters/abstract_FR.aux
+A level-1 auxiliary file: Chapters/abstract_EN.aux
+A level-1 auxiliary file: Chapters/introduction.aux
+A level-1 auxiliary file: Chapters/chapitre1.aux
+A level-1 auxiliary file: Chapters/chapitre2.aux
+A level-1 auxiliary file: Chapters/chapitre3.aux
+A level-1 auxiliary file: Chapters/conclusion.aux
+The style file: unsrt.bst
+Database file #1: biblio.bib
+Repeated entry---line 342 of file biblio.bib
+ : @book{halstead1977elements
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 377 of file biblio.bib
+ : @incollection{halstead1977elements
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 451 of file biblio.bib
+ : @book{halstead1977elements
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 458 of file biblio.bib
+ : @article{mccabe1976complexity
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 467 of file biblio.bib
+ : @article{mccabe1989design
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 497 of file biblio.bib
+ : @article{mccabe1989design
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 663 of file biblio.bib
+ : @book{russell2016artificial
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 721 of file biblio.bib
+ : @article{barry1981software
+ :                           ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 736 of file biblio.bib
+ : @article{fenton1999critique
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 764 of file biblio.bib
+ : @inproceedings{clark1998calibrating
+ :                                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 828 of file biblio.bib
+ : @article{fenton1999critique
+ :                            ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "khoshgoftaar1996early;khoshgoftaar1999assessing"
+Warning--there's a number but no volume in mccabe1976complexity
+Warning--empty journal in iso2003
+Warning--can't use both volume and number fields in rish2001empirical
+Warning--empty journal in hechenbichler2004weighted
+(There were 11 error messages)
